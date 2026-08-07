@@ -1,7 +1,7 @@
 <?php
 include "top.inc.php";
 // include "function.inc.php";
-$cat_id = mysqli_real_escape_string($conn, $_GET['cat_id']);
+$cat_id = isset($_GET['cat_id']) ? (int) $_GET['cat_id'] : 0;
 ?>
 
 <head>

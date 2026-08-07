@@ -14,10 +14,16 @@ $subquery = mysqli_query($conn, "select * from subcategories");
 $ip = getIP();
 
 if(isset($user_id)) {
-    $cart = mysqli_query($conn, "select * from user_cart where user_id='$user_id' and ip_address = '$ip'");
+    $stmt = mysqli_prepare($conn, "SELECT * FROM user_cart WHERE user_id = ? AND ip_address = ?");
+    mysqli_stmt_bind_param($stmt, "is", $user_id, $ip);
+    mysqli_stmt_execute($stmt);
+    $cart = mysqli_stmt_get_result($stmt);
     $num = mysqli_num_rows($cart);
 }else{
-    $cart = mysqli_query($conn, "select * from guest_cart where ip_address = '$ip'");
+    $stmt = mysqli_prepare($conn, "SELECT * FROM guest_cart WHERE ip_address = ?");
+    mysqli_stmt_bind_param($stmt, "s", $ip);
+    mysqli_stmt_execute($stmt);
+    $cart = mysqli_stmt_get_result($stmt);
     $num = mysqli_num_rows($cart);
 }
 
