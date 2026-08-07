@@ -31,11 +31,11 @@ $token = csrf_token();
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['subname']."</td>
+                        <td>".h($data['subname'])."</td>
                         <td>
-                            <a href='?id=".$data['id']."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
+                            <a href='?id=".h($data['id'])."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
                                 &nbsp;
-                            <a href='manage_subcategories.php?id=".$data['id']."'>Edit</a>
+                            <a href='manage_subcategories.php?id=".h($data['id'])."'>Edit</a>
                         </td>
                     </tr>
                     ";

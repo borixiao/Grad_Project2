@@ -62,7 +62,7 @@ if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
     </div>
     <form method="post" action="">
         <?php echo csrf_field(); ?>
-        <input type="text" name="catname" placeholder="Category Name" value="<?php echo $catname; ?>" required>
+        <input type="text" name="catname" placeholder="Category Name" value="<?php echo h($catname); ?>" required>
         <input type="submit" name="submit" value="Submit">
 
         <div class="msg"><?php echo $msg; ?></div>

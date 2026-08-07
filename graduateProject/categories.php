@@ -18,16 +18,16 @@ $cat_id = isset($_GET['cat_id']) ? (int) $_GET['cat_id'] : 0;
                     <div class="itemouter">
                         <div class="Indexcol">
                             <div class="imgBx">
-                                <img src="./admin/assets/images/<?php echo $list['pimage'] ?>">
+                                <img src="./admin/assets/images/<?php echo h($list['pimage']) ?>">
                             </div>
 
                         </div>
                         <div class="details">
-                            <a href="products-detail.php?id=<?php echo $list['id'] ?>">
-                                <h3><?php echo $list['pname'] ?></h3>
-                                <p> $ <?php echo $list['sprice'] ?> </p>
+                            <a href="products-detail.php?id=<?php echo h($list['id']) ?>">
+                                <h3><?php echo h($list['pname']) ?></h3>
+                                <p> $ <?php echo h($list['sprice']) ?> </p>
                                 <form action="add_cart.php" method="post">
-                                    <input type="hidden" name="pid" value="<?php echo $list['id'] ?>">
+                                    <input type="hidden" name="pid" value="<?php echo h($list['id']) ?>">
                                     <!-- <input type="submit" name="cart" value="Add Cart" class="cartBtn"> -->
                                 </form>
                             </a>

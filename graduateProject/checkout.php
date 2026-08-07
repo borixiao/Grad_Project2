@@ -54,11 +54,11 @@ include "top.inc.php";
                     <tr>
                         <td>
                             <div class="cart-info">
-                                <img src="./admin/assets/images/<?php echo $data['pimage'] ?>" width="80px">
+                                <img src="./admin/assets/images/<?php echo h($data['pimage']) ?>" width="80px">
                                 <div>
-                                    <p><?php echo $data['pname'] ?></p>
-                                    <small>數量 : <?php echo $row['qty'] ?></small><br>
-                                    <small>金額 : $<?php echo $sub_total ?></small>
+                                    <p><?php echo h($data['pname']) ?></p>
+                                    <small>數量 : <?php echo h($row['qty']) ?></small><br>
+                                    <small>金額 : $<?php echo h($sub_total) ?></small>
                                 </div>
                             </div>
                         </td>
@@ -108,8 +108,8 @@ include "top.inc.php";
                 </div>
 
                 <?php foreach ($cartItems as $item) { ?>
-                    <input type="hidden" name="oid[]" value="<?php echo $item['pid'] ?>">
-                    <input type="hidden" name="qty[]" value="<?php echo $item['qty'] ?>">
+                    <input type="hidden" name="oid[]" value="<?php echo h($item['pid']) ?>">
+                    <input type="hidden" name="qty[]" value="<?php echo h($item['qty']) ?>">
                 <?php } ?>
 
                 <input type="submit" name="order" value="送出訂單" id="order" class="orderconfirm_btn">

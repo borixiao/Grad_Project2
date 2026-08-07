@@ -38,15 +38,15 @@ $token = csrf_token();
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['order_name']."</td>
-                        <td>".$data['order_email']."</td>
-                        <td>".$data['order_phone']."</td>
-                        <td>".$data['order_address']."</td>
-                        
-                        <td>".$data['oid']."</td>
-                        <td>".$data['order_user_id']."</td>
-                        <td>".$data['qty']."</td>
-                        <td>&nbsp;<a href='?id=".$data['id']."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a>&nbsp;</td>
+                        <td>".h($data['order_name'])."</td>
+                        <td>".h($data['order_email'])."</td>
+                        <td>".h($data['order_phone'])."</td>
+                        <td>".h($data['order_address'])."</td>
+
+                        <td>".h($data['oid'])."</td>
+                        <td>".h($data['order_user_id'])."</td>
+                        <td>".h($data['qty'])."</td>
+                        <td>&nbsp;<a href='?id=".h($data['id'])."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a>&nbsp;</td>
                     </tr>
                     ";
                 }

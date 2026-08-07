@@ -62,7 +62,7 @@ if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
     </div>
     <form method="post" action="">
         <?php echo csrf_field(); ?>
-        <input type="text" name="subname" placeholder="SubCategory Name ( 請輸入中文 )" value="<?php echo $subname; ?>" required>
+        <input type="text" name="subname" placeholder="SubCategory Name ( 請輸入中文 )" value="<?php echo h($subname); ?>" required>
         <input type="submit" name="submit" value="Submit">
 
         <div class="msg"><?php echo $msg; ?></div>

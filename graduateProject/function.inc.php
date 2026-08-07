@@ -1,4 +1,9 @@
 <?php
+function h($value)
+{
+    return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+}
+
 function get_product($conn, $limit = '', $cat_id = '', $subcat_id = '', $pro_id = '')
 {
     // cat_id / subcat_id / pro_id / limit 都只允許數字，先轉成 int 再拼進 SQL，

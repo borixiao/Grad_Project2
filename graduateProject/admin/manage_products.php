@@ -105,7 +105,7 @@ if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
     </div>
     <form method="post" action="" enctype="multipart/form-data">
         <?php echo csrf_field(); ?>
-        <input type="text" name="pname" placeholder="Product Name" value="<?php echo $pname; ?>" required>
+        <input type="text" name="pname" placeholder="Product Name" value="<?php echo h($pname); ?>" required>
         
         <select name="cat_id">
             <?php
@@ -113,10 +113,10 @@ if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
                 while($get=mysqli_fetch_assoc($cat)){
                     if($get['id']==$cat_id){
                         echo "
-                        <option selected value=".$get['id'].">".$get['catname']."</option>
+                        <option selected value=".h($get['id']).">".h($get['catname'])."</option>
                         ";
                     }else{
-                        echo "<option value=".$get['id'].">".$get['catname']."</option>";
+                        echo "<option value=".h($get['id']).">".h($get['catname'])."</option>";
                     }
                 }
 
@@ -130,10 +130,10 @@ if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
                 while($get=mysqli_fetch_assoc($subcat)){
                     if($get['id']==$cat_id){
                         echo "
-                        <option selected value=".$get['id'].">".$get['subname']."</option>
+                        <option selected value=".h($get['id']).">".h($get['subname'])."</option>
                         ";
                     }else{
-                        echo "<option value=".$get['id'].">".$get['subname']."</option>";
+                        echo "<option value=".h($get['id']).">".h($get['subname'])."</option>";
                     }
                 }
 
@@ -141,11 +141,11 @@ if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
             ?>
         </select>
 
-        <input type="text" name="mrp" placeholder="Product MRP" value="<?php echo $mrp; ?>" required>
-        <input type="text" name="sprice" placeholder="Selling price" value="<?php echo $sprice; ?>" required>
-        <input type="text" name="short_desc" placeholder="Short Description" value="<?php echo $short_desc; ?>" required>
-        <input type="text" name="long_desc" placeholder="Long Description" value="<?php echo $long_desc; ?>" required>
-        <input type="text" name="keywords" placeholder="Enter keywords" value="<?php echo $keywords; ?>" required>
+        <input type="text" name="mrp" placeholder="Product MRP" value="<?php echo h($mrp); ?>" required>
+        <input type="text" name="sprice" placeholder="Selling price" value="<?php echo h($sprice); ?>" required>
+        <input type="text" name="short_desc" placeholder="Short Description" value="<?php echo h($short_desc); ?>" required>
+        <input type="text" name="long_desc" placeholder="Long Description" value="<?php echo h($long_desc); ?>" required>
+        <input type="text" name="keywords" placeholder="Enter keywords" value="<?php echo h($keywords); ?>" required>
         <input type="file" name="pimage">
         <!-- <input type="text" name="status" placeholder="Category Name" value="<?php echo $catname; ?>" required>
         <input type="text" name="create" placeholder="Category Name" value="<?php echo $catname; ?>" required> -->
