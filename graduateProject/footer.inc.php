@@ -78,12 +78,6 @@
                     </p>
                     <p><i class="fas fa-phone me-3"></i> (04)-8321588</p>
                     <p><i class="fas fa-hourglass me-3"></i>營業時間 : 10:00~22:00</p>
-
-                    <!-- <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!"
-                            role="button"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-primary btn-floating m-1" style="background-color: #89fa20;" href="#!"
-                            role="button"><i class="fab fa-line"></i></a> -->
-
                 </div>
                 <!-- Grid column -->
                 <div class="qrcord-area col-md-1 col-lg-1">
@@ -97,11 +91,5 @@
     </section>
     <!-- Section: Links  -->
 
-    <!-- Copyright -->
-    <!-- <div class="text-center p-4" style="background-color: rgba(253, 185, 38, 0.829);">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div> -->
-    <!-- Copyright -->
 </footer>
 <!-- footer end -->

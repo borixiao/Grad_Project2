@@ -151,13 +151,6 @@ include "top.inc2.php";
                     </div>
                 </div>
             </div>
-            <!-- <div class="slider-con">
-                <div class="slider-img">
-                    <img src="../img/example.jpg" alt="">
-                </div>
-                <h3>slider5</h3>
-                <p>slider5 info</p>
-            </div> -->
         </div>
     </section>
     <!-- 第四部份end -->
