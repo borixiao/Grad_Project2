@@ -17,20 +17,20 @@ $pro_id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
             <div class="singlecol">
                 <div class="imgBx">
-                    <img src="./admin/assets/images/<?php echo $list['pimage'] ?>">
+                    <img src="./admin/assets/images/<?php echo h($list['pimage']) ?>">
                 </div>
             </div>
             <div class="singlecol">
-                <h2><?php echo $list['pname'] ?></h2>
-                <label class="sprice">$ <?php echo $list['sprice'] ?></label> &nbsp; &nbsp; <label class="mrp"><del>$ <?php echo $list['mrp'] ?></del></label>
+                <h2><?php echo h($list['pname']) ?></h2>
+                <label class="sprice">$ <?php echo h($list['sprice']) ?></label> &nbsp; &nbsp; <label class="mrp"><del>$ <?php echo h($list['mrp']) ?></del></label>
                 <br>
                 <form method="post" action="add_cart.php">
                     <input type="number" name="qty" value="1" min="1" max="5">
                     <input type="submit" name="cart" value="加入購物車" class="cartBtn">
-                    <p><?php echo $list['short_desc'] ?></p>
-                    <p><?php echo $list['long_desc'] ?></p>
+                    <p><?php echo h($list['short_desc']) ?></p>
+                    <p><?php echo h($list['long_desc']) ?></p>
 
-                    <input type="hidden" name="pid" value="<?php echo $list['id'] ?>">               
+                    <input type="hidden" name="pid" value="<?php echo h($list['id']) ?>">
                 </form>
             </div>
         <?php } ?>

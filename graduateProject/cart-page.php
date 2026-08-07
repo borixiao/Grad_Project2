@@ -48,17 +48,17 @@ session_start();
                         <tr>
                             <td>
                                 <div class="cart-info">
-                                    <img src="./admin/assets/images/<?php echo $data['pimage'] ?>" width="80px">
+                                    <img src="./admin/assets/images/<?php echo h($data['pimage']) ?>" width="80px">
                                     <div>
-                                        <p><?php echo $data['pname'] ?></p>
-                                        <small>價格 : $<?php echo $data['sprice'] ?></small>
+                                        <p><?php echo h($data['pname']) ?></p>
+                                        <small>價格 : $<?php echo h($data['sprice']) ?></small>
                                         <br>
-                                        <a href="add_cart.php?id=<?php echo $row['id'] ?>">移出</a>
+                                        <a href="add_cart.php?id=<?php echo h($row['id']) ?>">移出</a>
                                     </div>
                                 </div>
                             </td>
-                            <td><?php echo $row['qty'] ?></td>
-                            <td>$<?php echo $sub_total ?></td>
+                            <td><?php echo h($row['qty']) ?></td>
+                            <td>$<?php echo h($sub_total) ?></td>
                         </tr>
                     <?php }
                 } else {
@@ -87,17 +87,17 @@ session_start();
                         <tr>
                             <td>
                                 <div class="cart-info">
-                                    <img src="./admin/assets/images/<?php echo $data['pimage'] ?>" width="80px">
+                                    <img src="./admin/assets/images/<?php echo h($data['pimage']) ?>" width="80px">
                                     <div>
-                                        <p><?php echo $data['pname'] ?></p>
-                                        <small>價格 : $<?php echo $data['sprice'] ?></small>
+                                        <p><?php echo h($data['pname']) ?></p>
+                                        <small>價格 : $<?php echo h($data['sprice']) ?></small>
                                         <br>
-                                        <a href="add_cart.php?id=<?php echo $row['id'] ?>">移出</a>
+                                        <a href="add_cart.php?id=<?php echo h($row['id']) ?>">移出</a>
                                     </div>
                                 </div>
                             </td>
-                            <td><?php echo $row['qty'] ?></td>
-                            <td>$<?php echo $sub_total ?></td>
+                            <td><?php echo h($row['qty']) ?></td>
+                            <td>$<?php echo h($sub_total) ?></td>
                         </tr>
             <?php }
                 } else {

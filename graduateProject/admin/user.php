@@ -33,11 +33,11 @@ if(isset($_GET['id']) && $_GET['id']!='' && csrf_verify($_GET['csrf_token'] ?? '
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['uname']."</td>
-                        <td>".$data['user_id']."</td>
-                        <td>".$data['email']."</td>
-                        <td>".$data['mnumber']."</td>
-                        <td>".$data['password']."</td>
+                        <td>".h($data['uname'])."</td>
+                        <td>".h($data['user_id'])."</td>
+                        <td>".h($data['email'])."</td>
+                        <td>".h($data['mnumber'])."</td>
+                        <td>".h($data['password'])."</td>
                     </tr>
                     ";
                 }

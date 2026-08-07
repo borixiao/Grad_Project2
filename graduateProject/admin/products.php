@@ -54,19 +54,19 @@ $token = csrf_token();
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['pname']."</td>
+                        <td>".h($data['pname'])."</td>
                         <td>
-                            <a href='?id=".$data['id']."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
+                            <a href='?id=".h($data['id'])."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
                                 &nbsp;
-                            <a href='manage_products.php?id=".$data['id']."'>Edit</a>
+                            <a href='manage_products.php?id=".h($data['id'])."'>Edit</a>
                         </td>
 
                         <td>"; ?>
                         <?php
                             if($data['status']==1){
-                               echo"<a href='?type=status&operation=deactive&s_id=".$data['id']."&csrf_token=".urlencode($token)."'>上架Active</a>";
+                               echo"<a href='?type=status&operation=deactive&s_id=".h($data['id'])."&csrf_token=".urlencode($token)."'>上架Active</a>";
                             }else{
-                                echo"<a href='?type=status&operation=active&s_id=".$data['id']."&csrf_token=".urlencode($token)."'>下架Deactive</a>";
+                                echo"<a href='?type=status&operation=active&s_id=".h($data['id'])."&csrf_token=".urlencode($token)."'>下架Deactive</a>";
                             }
                         echo "</td>
                     </tr>

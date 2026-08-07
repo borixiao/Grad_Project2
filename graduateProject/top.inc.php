@@ -74,7 +74,7 @@ if(isset($user_id)) {
                                 <?php
                                 while ($data = mysqli_fetch_assoc($query)) {
                                     echo " 
-                                        <li><a href='categories.php?cat_id=" . $data['id'] . "'>" . $data['catname'] . "</a></li>
+                                        <li><a href='categories.php?cat_id=" . h($data['id']) . "'>" . h($data['catname']) . "</a></li>
                                     ";
                                 }
                                 ?>
@@ -84,7 +84,7 @@ if(isset($user_id)) {
                                 <?php
                                 while ($data = mysqli_fetch_assoc($subquery)) {
                                     echo " 
-                                        <li><a href='subcategories.php?subcat_id=" . $data['id'] . "'>" . $data['subname'] . "</a></li>
+                                        <li><a href='subcategories.php?subcat_id=" . h($data['id']) . "'>" . h($data['subname']) . "</a></li>
                                     ";
                                 }
                                 ?>
@@ -189,11 +189,11 @@ if(isset($user_id)) {
                                     <?php
                                     mysqli_data_seek($query, 0);
                                     while ($data = mysqli_fetch_assoc($query)) {
-                                        echo "<li><a href='categories.php?cat_id=" . $data['id'] . "'>" . $data['catname'] . "</a></li>";
+                                        echo "<li><a href='categories.php?cat_id=" . h($data['id']) . "'>" . h($data['catname']) . "</a></li>";
                                     }
                                     mysqli_data_seek($subquery, 0);
                                     while ($data = mysqli_fetch_assoc($subquery)) {
-                                        echo "<li><a href='subcategories.php?subcat_id=" . $data['id'] . "'>" . $data['subname'] . "</a></li>";
+                                        echo "<li><a href='subcategories.php?subcat_id=" . h($data['id']) . "'>" . h($data['subname']) . "</a></li>";
                                     }
                                     ?>
                                 </ul>

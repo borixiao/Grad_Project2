@@ -32,11 +32,11 @@ $token = csrf_token();
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['catname']."</td>
+                        <td>".h($data['catname'])."</td>
                         <td>
-                            <a href='?id=".$data['id']."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
+                            <a href='?id=".h($data['id'])."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
                                 &nbsp;
-                            <a href='manage_categories.php?id=".$data['id']."'>Edit</a>
+                            <a href='manage_categories.php?id=".h($data['id'])."'>Edit</a>
                         </td>
                     </tr>
                     ";
