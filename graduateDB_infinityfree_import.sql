@@ -1,3 +1,4 @@
+SET NAMES utf8mb4;
 
 DROP TABLE IF EXISTS user_order;
 DROP TABLE IF EXISTS user_cart;
