@@ -61,14 +61,45 @@
     transition: all 0.1s ease;
     transform-origin: top;
     justify-content: center;
+    align-items: flex-start;
+    gap: clamp(24px, 5vw, 72px);
+    padding: 18px clamp(20px, 6vw, 90px);
+    flex-wrap: wrap;
+}
+.brand-list-item .sub-list{
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(92px, max-content));
+    text-align: center;
+    gap: 10px 28px;
+    position: static;
+    left: auto;
+    width: min(100%, 520px);
+    justify-content: center;
+    padding: 0;
+}
+.brand-list-item .sub-list2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(92px, max-content));
+    gap: 10px 28px;
+    position: static;
+    right: auto;
+    top: auto;
+    text-align: center;
+    width: min(100%, 520px);
+    justify-content: center;
+    padding: 0;
 }
 .brand-list-item ul{
-    margin-bottom: 40px;
+    margin: 0 0 18px;
 }
 .brand-list-item a{
     display: block;
-    padding: 0px 20px;
-    margin: 10px 0px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    white-space: nowrap;
+    word-break: keep-all;
+    writing-mode: horizontal-tb;
 }
 .brand-list-item li a{
     color: rgb(92, 92, 92);
@@ -308,6 +339,124 @@
     }
 }
 
+/* responsive navbar fixes */
+.header-container{
+    align-items: center;
+    min-height: 72px;
+}
+.header-list{
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0 28px 0 0;
+}
+.header-list > li{
+    display: flex;
+    align-items: center;
+}
+.right-items a{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.header-phone-list-container-bg{
+    display: none;
+}
+.header-phone-list details{
+    width: 100%;
+}
+.header-phone-list summary{
+    cursor: pointer;
+    list-style: none;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+}
+.header-phone-list summary::-webkit-details-marker{
+    display: none;
+}
+.header-phone-list summary::after{
+    content: "+";
+    float: right;
+}
+.header-phone-list details[open] summary::after{
+    content: "-";
+}
+
+@media (max-width: 768px){
+    body{
+        padding-top: 62px;
+    }
+    .header-container{
+        min-height: 62px;
+        padding: 8px 16px;
+    }
+    .header-logo{
+        left: 0;
+        width: 74px;
+        margin: 0;
+    }
+    .header-button{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border-radius: 4px;
+        position: relative;
+        z-index: 21000;
+    }
+    .header-phone-list-container{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: min(82vw, 340px);
+        height: 100vh;
+        padding-top: 72px;
+        overflow-y: auto;
+        transform: translateX(-105%);
+        transition: transform 0.25s ease;
+        z-index: 20000;
+        box-shadow: 6px 0 18px rgba(0,0,0,0.18);
+    }
+    .header-phone-list-container.active{
+        transform: translateX(0);
+        left: 0;
+    }
+    .header-phone-list-container-bg{
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 19000;
+    }
+    .header-phone-list-container-bg.active{
+        display: block;
+    }
+    .header-phone-list-container ul{
+        height: auto;
+        padding: 0 0 28px;
+    }
+    .header-phone-list-container ul li{
+        margin: 0;
+        border-bottom: 1px solid #ededed;
+    }
+    .header-phone-list-container a{
+        display: block;
+        font-size: 1.25rem;
+        padding: 12px 20px;
+    }
+    .brand-list-phone,
+    .sports-list-phone{
+        display: block;
+        background: #f5f5f5;
+    }
+    .brand-list-phone ul li a,
+    .sports-list-phone ul li a{
+        margin-left: 0;
+        padding: 10px 32px;
+        font-size: 1.05rem;
+    }
+}
+
 /*------------------New Products CSS------------------*/
 .newProducts{
     width: 100%;
@@ -399,18 +548,31 @@
 /*------------------Products detail page CSS------------------*/
 .singlePro{
     width: 100%;
-    padding: 100px;
+    padding: 80px 24px;
+}
+.singlePro .row{
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
 }
 .singlePro .singlecol{
-    width: 48%;
+    flex: 1 1 360px;
+    max-width: 520px;
 }
 .singlePro .singlecol p{
     margin: 10px 0;
+    line-height: 1.8;
 }
 .singlePro .singlecol .imgBx{
     position: relative;
-    width: 400px;
-    height: 300px;
+    width: min(100%, 460px);
+    aspect-ratio: 4 / 3;
+    height: auto;
+    margin: 0 auto;
 }
 .singlePro .singlecol .imgBx img{
     position: absolute;
@@ -440,6 +602,17 @@ input[type="number"]{
 }
 .IDLinf{
     display: flex;
+}
+@media (max-width: 768px){
+    .singlePro{
+        padding: 40px 18px;
+    }
+    .singlePro .row{
+        gap: 28px;
+    }
+    .singlePro .singlecol{
+        flex-basis: 100%;
+    }
 }
 /*------------------Login Form------------------*/
 .toggleForm, .rtoggleForm{

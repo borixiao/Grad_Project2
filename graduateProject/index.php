@@ -120,9 +120,7 @@ include "top.inc2.php";
                     <div class="slider-intro">
                         <h2>棒球專區</h2>
                         <div class="underline"></div>
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nihil quidem quos,
-                            perspiciatis quaerat asperiores autem quasi nisi magni maiores quas quia maxime illo.
-                            Ducimus laudantium tenetur veniam laborum accusamus.</h3>
+                        <h3>提供棒球手套、球棒、打擊手套與訓練配件等用品，依照不同年齡層與使用需求協助挑選合適裝備。無論是日常練習、校隊訓練或正式比賽，都能找到兼具耐用度與舒適度的棒球用品。</h3>
                     </div>
                     <div class="slider-img">
                         <img src="./images/baseball intro.png" alt="">
@@ -137,9 +135,7 @@ include "top.inc2.php";
                     <div class="slider-intro">
                         <h2>專業運動</h2>
                         <div class="underline"></div>
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nihil quidem quos,
-                            perspiciatis quaerat asperiores autem quasi nisi magni maiores quas quia maxime illo.
-                            Ducimus laudantium tenetur veniam laborum accusamus.</h3>
+                        <h3>精選跑步、籃球、排球、登山、游泳與健身訓練所需的專業運動商品，從鞋款、服飾到各式配件皆注重機能與實用性。讓顧客能依照運動習慣、場地與強度，選到真正適合自己的裝備。</h3>
                     </div>
                 </div>
             </div>
@@ -148,9 +144,7 @@ include "top.inc2.php";
                     <div class="slider-intro">
                         <h2>文宏故事屋</h2>
                         <div class="underline"></div>
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nihil quidem quos,
-                            perspiciatis quaerat asperiores autem quasi nisi magni maiores quas quia maxime illo.
-                            Ducimus laudantium tenetur veniam laborum accusamus.</h3>
+                        <h3>文宏體育用品社在員林深耕多年，陪伴在地居民、學生與運動愛好者挑選合適的裝備。從第一雙球鞋到每一次比賽前的準備，我們重視的不只是商品，更是每位顧客投入運動時的期待與熱情。</h3>
                     </div>
                     <div class="slider-img">
                         <img src="./images/WHstore.png" alt="">

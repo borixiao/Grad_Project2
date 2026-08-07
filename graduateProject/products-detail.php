@@ -52,8 +52,8 @@ $pro_id = mysqli_real_escape_string($conn, $_GET['id']);
             </div>
             <div class="IDLinf">
                 <div class="details">
-                     <h3>Product Name</h3>
-                        <p> $1000</p>
+                     <h3>Nike Pegasus 慢跑鞋</h3>
+                        <p> $2680</p>
                 </div>
                 <input type="submit" name="cart" value="加入購物車" class="cartBtn">
             </div>
@@ -68,8 +68,8 @@ $pro_id = mysqli_real_escape_string($conn, $_GET['id']);
             </div>
             <div class="IDLinf">
                 <div class="details">
-                     <h3>Product Name</h3>
-                        <p> $2500</p>
+                     <h3>adidas RUNFALCON 2.0</h3>
+                        <p> $1880</p>
                 </div>
                 <input type="submit" name="cart" value="加入購物車" class="cartBtn">
             </div>
@@ -83,8 +83,8 @@ $pro_id = mysqli_real_escape_string($conn, $_GET['id']);
             </div>
             <div class="IDLinf">
                 <div class="details">
-                     <h3>Product Name</h3>
-                        <p> $2000</p>
+                     <h3>ASICS GEL-CUMULUS 23</h3>
+                        <p> $3280</p>
                 </div>
                 <input type="submit" name="cart" value="加入購物車" class="cartBtn">
             </div>
@@ -98,8 +98,8 @@ $pro_id = mysqli_real_escape_string($conn, $_GET['id']);
             </div>
             <div class="IDLinf">
                 <div class="details">
-                     <h3>Product Name</h3>
-                        <p> $1800</p>
+                     <h3>Nike Dri-FIT 運動上衣</h3>
+                        <p> $1280</p>
                 </div>
                 <input type="submit" name="cart" value="加入購物車" class="cartBtn">
             </div>

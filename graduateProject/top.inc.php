@@ -56,6 +56,9 @@ if(isset($user_id)) {
             <div class="header-logo">
                 <a href="./index.php"><img class="w-100" src="./images/WHlogo-719px.png" alt=""></a>
             </div>
+            <button class="header-button" type="button" aria-label="開啟選單" aria-expanded="false">
+                <span class="list-line"></span>
+            </button>
             <div class="header-list-container">
                 <ul class="header-list" style="display: flex;">
                     <li class="brand-list">
@@ -204,6 +207,56 @@ if(isset($user_id)) {
 
             </div>
 
+            <div class="header-phone-list-container" aria-hidden="true">
+                <ul class="header-phone-list">
+                    <li>
+                        <details>
+                            <summary>品牌列表</summary>
+                            <div class="brand-list-phone">
+                                <ul>
+                                    <?php
+                                    mysqli_data_seek($query, 0);
+                                    while ($data = mysqli_fetch_assoc($query)) {
+                                        echo "<li><a href='categories.php?cat_id=" . $data['id'] . "'>" . $data['catname'] . "</a></li>";
+                                    }
+                                    mysqli_data_seek($subquery, 0);
+                                    while ($data = mysqli_fetch_assoc($subquery)) {
+                                        echo "<li><a href='subcategories.php?subcat_id=" . $data['id'] . "'>" . $data['subname'] . "</a></li>";
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>專業運動</summary>
+                            <div class="sports-list-phone">
+                                <ul>
+                                    <li><a href="">籃球</a></li>
+                                    <li><a href="">棒球</a></li>
+                                    <li><a href="">排球</a></li>
+                                    <li><a href="">羽毛球</a></li>
+                                    <li><a href="">網球</a></li>
+                                    <li><a href="">桌球</a></li>
+                                    <li><a href="">足球</a></li>
+                                    <li><a href="">登山器具</a></li>
+                                    <li><a href="">游泳用品</a></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </li>
+                    <li><a href="./badminton.php">羽球專區</a></li>
+                    <li><a href="./story.php">故事屋</a></li>
+                    <li><a href="cart-page.php">購物車（<?php echo $num ?>）</a></li>
+                    <?php
+                    if (isset($user_id)) {
+                        echo "<li><a href='logout.php'>登出</a></li>";
+                    }
+                    ?>
+                </ul>
+            </div>
+            <div class="header-phone-list-container-bg"></div>
 
 
         </div>
@@ -211,6 +264,20 @@ if(isset($user_id)) {
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            $(".header-button").on("click", function() {
+                $(".header-phone-list-container, .header-phone-list-container-bg").toggleClass("active");
+                $(".list-line").toggleClass("active");
+                var expanded = $(this).attr("aria-expanded") === "true";
+                $(this).attr("aria-expanded", !expanded);
+                $(".header-phone-list-container").attr("aria-hidden", expanded);
+            });
+            $(".header-phone-list-container-bg, .header-phone-list a").on("click", function() {
+                $(".header-phone-list-container, .header-phone-list-container-bg").removeClass("active");
+                $(".list-line").removeClass("active");
+                $(".header-button").attr("aria-expanded", "false");
+                $(".header-phone-list-container").attr("aria-hidden", "true");
+            });
+
             $("#signup").on("click", function(e) {
                 e.preventDefault();
                 var uname = $("#uname").val();

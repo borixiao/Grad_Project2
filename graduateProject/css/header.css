@@ -51,6 +51,7 @@ body{
 }
 /* brand-list */
 .brand-list-item{
+    display: flex;
     position: absolute;
     transform: scaleY(0);
     background: #fff;
@@ -62,32 +63,45 @@ body{
     transition: all 0.1s ease;
     transform-origin: top;
     justify-content: center;
+    align-items: flex-start;
+    gap: clamp(24px, 5vw, 72px);
+    padding: 18px clamp(20px, 6vw, 90px);
+    flex-wrap: wrap;
 }
 .brand-list-item .sub-list{
     font-weight: 600;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    position: relative;
-    left: 350px;
+    grid-template-columns: repeat(auto-fit, minmax(92px, max-content));
     text-align: center;
-    gap: 3rem;
+    gap: 10px 28px;
+    position: static;
+    left: auto;
+    width: min(100%, 520px);
+    justify-content: center;
+    padding: 0;
 }
 .brand-list-item .sub-list2{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    column-gap: 3rem;
-    position: relative;
-    right: 400px;
-    top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(92px, max-content));
+    gap: 10px 28px;
+    position: static;
+    right: auto;
+    top: auto;
     text-align: center;
+    width: min(100%, 520px);
+    justify-content: center;
+    padding: 0;
 }
 .brand-list-item ul{
-    margin-bottom: 40px;
+    margin: 0 0 18px;
 }
 .brand-list-item a{
     display: block;
-    padding: 0px 20px;
-    margin: 10px 0px;
+    padding: 0px 12px;
+    margin: 8px 0px;
+    white-space: nowrap;
+    word-break: keep-all;
+    writing-mode: horizontal-tb;
 }
 .brand-list-item li a{
     color: rgb(92, 92, 92);
@@ -328,5 +342,123 @@ body{
     }
     .sport-list-item ul li a{
         font-size: 1rem;
+    }
+}
+
+/* responsive navbar fixes */
+.header-container{
+    align-items: center;
+    min-height: 72px;
+}
+.header-list{
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0 28px 0 0;
+}
+.header-list > li{
+    display: flex;
+    align-items: center;
+}
+.right-items a{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.header-phone-list-container-bg{
+    display: none;
+}
+.header-phone-list details{
+    width: 100%;
+}
+.header-phone-list summary{
+    cursor: pointer;
+    list-style: none;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+}
+.header-phone-list summary::-webkit-details-marker{
+    display: none;
+}
+.header-phone-list summary::after{
+    content: "+";
+    float: right;
+}
+.header-phone-list details[open] summary::after{
+    content: "-";
+}
+
+@media (max-width: 768px){
+    body{
+        padding-top: 62px;
+    }
+    .header-container{
+        min-height: 62px;
+        padding: 8px 16px;
+    }
+    .header-logo{
+        left: 0;
+        width: 74px;
+        margin: 0;
+    }
+    .header-button{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border-radius: 4px;
+        position: relative;
+        z-index: 21000;
+    }
+    .header-phone-list-container{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: min(82vw, 340px);
+        height: 100vh;
+        padding-top: 72px;
+        overflow-y: auto;
+        transform: translateX(-105%);
+        transition: transform 0.25s ease;
+        z-index: 20000;
+        box-shadow: 6px 0 18px rgba(0,0,0,0.18);
+    }
+    .header-phone-list-container.active{
+        transform: translateX(0);
+        left: 0;
+    }
+    .header-phone-list-container-bg{
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        z-index: 19000;
+    }
+    .header-phone-list-container-bg.active{
+        display: block;
+    }
+    .header-phone-list-container ul{
+        height: auto;
+        padding: 0 0 28px;
+    }
+    .header-phone-list-container ul li{
+        margin: 0;
+        border-bottom: 1px solid #ededed;
+    }
+    .header-phone-list-container a{
+        display: block;
+        font-size: 1.25rem;
+        padding: 12px 20px;
+    }
+    .brand-list-phone,
+    .sports-list-phone{
+        display: block;
+        background: #f5f5f5;
+    }
+    .brand-list-phone ul li a,
+    .sports-list-phone ul li a{
+        margin-left: 0;
+        padding: 10px 32px;
+        font-size: 1.05rem;
     }
 }

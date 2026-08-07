@@ -132,7 +132,7 @@ include "top.inc.php";
                     </div>
                     <div class="info">
                         <h1>曾國綸</h1>
-                        <p>國立台北教育大學數位設計系，開發團隊組長，目前就讀XX大學資管研究所，負責專案規劃、監督及後端與資料庫開發。</p>
+                        <p>國立台北教育大學數位設計系，負責專案規劃、進度整合、後端程式與資料庫架構設計，協助團隊完成前後台功能串接。</p>
                     </div>
                 </div>
                 <div class="creator-info-card col-lg-6" data-aos="flip-up" data-aos-delay="100" style="transition: all 0.3s ease;">
@@ -141,7 +141,7 @@ include "top.inc.php";
                     </div>
                     <div class="info">
                         <h1>蕭鈞鴻</h1>
-                        <p>國立台北教育大學數位設計系，團隊裡的顏值擔當，負責前端開發。</p>
+                        <p>國立台北教育大學數位設計系，負責前端版面製作、互動效果與頁面切版，讓網站在不同裝置上維持清楚的瀏覽體驗。</p>
                     </div>
                 </div>
                 <div class="creator-info-card col-lg-6" data-aos="flip-up" style="margin-bottom: 100px; transition: all 0.3s ease;">
@@ -150,7 +150,7 @@ include "top.inc.php";
                     </div>
                     <div class="info">
                         <h1>蕭柏睿</h1>
-                        <p>國立台北教育大學數位設計系，APEX鑽石，負責前端開發、企劃宣傳。</p>
+                        <p>國立台北教育大學數位設計系，負責前端開發、企劃內容與視覺素材整理，協助建立網站品牌形象與頁面內容。</p>
                     </div>
                 </div>
                 <div class="creator-info-card col-lg-6" data-aos="flip-up" data-aos-delay="100" style="margin-bottom: 100px; transition: all 0.3s ease;">
@@ -159,7 +159,7 @@ include "top.inc.php";
                     </div>
                     <div class="info">
                         <h1>莊子賢</h1>
-                        <p>國立台北教育大學數位設計系，數位大五延畢生，負責?</p>
+                        <p>國立台北教育大學數位設計系，負責資料整理、功能測試與頁面內容校對，協助確認購物流程與後台管理功能。</p>
                     </div>
                 </div>
             </section>
@@ -181,9 +181,7 @@ include "top.inc.php";
                 <div class="member-inf">
                     <h2>指導老師 俞旗山</h2>
                     <div class="h2-underline"></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, excepturi! Exercitationem inventore
-                        tenetur debitis, deleniti alias illum modi autem impedit quia doloribus adipisci harum maxime
-                        esse, suscipit porro quos itaque.</p>
+                    <p>協助專案方向規劃與成果檢視，提供網站開發、互動設計與專題呈現上的建議，讓團隊能完成完整的電商網站作品。</p>
                 </div>
             </div>
             <div class="member-con-phone" data-aos="fade-right">
@@ -191,9 +189,7 @@ include "top.inc.php";
                 <div class="member-inf">
                     <h2>組長 曾國綸</h2>
                     <div class="h2-underline"></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, excepturi! Exercitationem inventore
-                        tenetur debitis, deleniti alias illum modi autem impedit quia doloribus adipisci harum maxime
-                        esse, suscipit porro quos itaque.</p>
+                    <p>負責專案規劃、後端程式與資料庫設計，整合前台商品流程與後台管理功能。</p>
                 </div>
             </div>
             <div class="member-con-phone" data-aos="fade-right">
@@ -201,9 +197,7 @@ include "top.inc.php";
                 <div class="member-inf">
                     <h2>組員 蕭鈞鴻</h2>
                     <div class="h2-underline"></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, excepturi! Exercitationem inventore
-                        tenetur debitis, deleniti alias illum modi autem impedit quia doloribus adipisci harum maxime
-                        esse, suscipit porro quos itaque.</p>
+                    <p>負責前端頁面製作與互動效果，協助優化導覽、商品展示與手機版瀏覽體驗。</p>
                 </div>
             </div>
             <div class="member-con-phone" data-aos="fade-right">
@@ -211,9 +205,7 @@ include "top.inc.php";
                 <div class="member-inf">
                     <h2>組員 蕭柏睿</h2>
                     <div class="h2-underline"></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, excepturi! Exercitationem inventore
-                        tenetur debitis, deleniti alias illum modi autem impedit quia doloribus adipisci harum maxime
-                        esse, suscipit porro quos itaque.</p>
+                    <p>負責前端開發、企劃內容與素材整理，協助網站呈現更完整的品牌與服務資訊。</p>
                 </div>
             </div>
             <div class="member-con-phone" data-aos="fade-right">
@@ -221,9 +213,7 @@ include "top.inc.php";
                 <div class="member-inf">
                     <h2>組員 莊子賢</h2>
                     <div class="h2-underline"></div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, excepturi! Exercitationem inventore
-                        tenetur debitis, deleniti alias illum modi autem impedit quia doloribus adipisci harum maxime
-                        esse, suscipit porro quos itaque.</p>
+                    <p>負責資料整理、功能測試與內容校對，協助確認購物流程、會員流程與後台管理狀態。</p>
                 </div>
             </div>
         </div>
