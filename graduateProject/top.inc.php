@@ -170,41 +170,7 @@ if(isset($user_id)) {
 
                     </li>
                     <li>
-                        <!-- login頁面 -->
-                        <!-- <div class="toggleForm">
-                            <div class="lbtn" onclick="lFormClose()"></div>
-                            <div class="box">
-                                <div class="titleText">
-                                    <h1>登入</h1>
-                                </div>
-                                <form id="login_form" method="post" action="">
-                                    <input type="email" name="email" placeholder="輸入Email" id="login_email" class="form-data" required>
-                                    <input type="text" name="password" placeholder="輸入密碼" id="login_password" class="form-data" required>
-                                    <input type="submit" name="login" value="登入" id="login" class="login_regist_btn">
-                                    <div id="msg1"></div>
-                                </form>
-                            </div>
-                        </div> -->
-                        <!-- 註冊頁面 -->
-                        <!-- <div class="rtoggleForm">
-                            <div class="lbtn" onclick="rFormClose()"></div>
-                            <div class="box">
-                                <div class="titleText">
-                                    <h1>註冊</h1>
-                                </div>
-                                <form method="post" action="" id="reg_form">
-                                    <input type="text" name="uname" placeholder="輸入姓名" class="form-data" id="uname" required>
-                                    <input type="email" name="email" placeholder="輸入Email" class="form-data" id="email" required>
-                                    <input type="text" name="mnumber" placeholder="輸入聯絡號碼" class="form-data" id="mnumber" maxlength="10" required>
-                                    <input type="password" name="password" placeholder="輸入密碼" class="form-data" id="password" required>
-                                    <p>我們會使用您的個人資料來處理訂單及本網站中的使用體驗，以及其他在隱私權政策中說明的用途。</p>
-                                    <input type="submit" name="signup" value="註冊" id="signup" class="login_regist_btn"><br>
-                                    <div id="msg"></div>
-                                </form>
-                            </div>
-                        </div> -->
-
-                        <div class="right-items">                          
+                        <div class="right-items">
                 
                             <a href="cart-page.php"><i class="fas fa-shopping-cart"></i><sup><?php echo $num ?></sup></a>
                         </div>
@@ -338,33 +304,6 @@ if(isset($user_id)) {
                     }
                 })
             });
-            // $("#order").on("click", function(e) {
-            //     e.preventDefault();
-            //     var order_name = $("#order_name").val();
-            //     var order_email = $("#order_email").val();
-            //     var order_phone = $("#order_phone").val();
-            //     var order_address = $("#order_address").val();
-            //     var order_pay = $("#order_pay").val();
-            //     $.ajax({
-            //         url: "user_order.php",
-            //         type: "POST",
-            //         data: {
-            //             order_name: order_name,
-            //             order_email: order_email,
-            //             order_phone: order_phone,
-            //             order_address: order_address,
-            //             order_pay: order_pay
-            //         },
-            //         success: function(result) {
-            //             if (result == 1) {
-            //                 window.location.href = window.location.href;
-            //                 $("#order_form").trigger("reset");
-            //             } else {
-            //                 window.location.href = "order.php";
-            //             }
-            //         }
-            //     })
-            // });
         });
     </script>
 </body>

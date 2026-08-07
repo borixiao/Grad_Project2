@@ -39,83 +39,6 @@ include "top.inc.php";
 
 <body>
 
-    <!-- <div class="creator-container">
-        <div class="creator-con-font">
-            <h1>創建團隊</h1>
-            <div class="creator-con-font-underline" data-aos="flip-left"></div>
-        </div>
-        <div class="creator-inf-con container">
-            <div class="leader-con col-sm-12">
-                <div class="leader-con-img"><img src="../img/leader.PNG" alt=""></div>
-                <div class="leader-title">
-                    <h1>指導老師</h1>
-                </div>
-                <div class="leader-info">
-                    <img src="../img/leader01.jpeg" alt="">
-                    <h2>指導老師 俞旗山</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum tenetur, nostrum veniam
-                        molestiae quis ratione mollitia exercitationem deleniti, eveniet, fugiat quia molestias
-                        voluptatibus enim dolorum fugit? Modi, rerum quidem.</p>
-                </div>
-            </div>
-            <div class="member-container">
-                <div class="member-con col-md-3" data-aos="zoom-in-up">
-                    <div class="member-con-img"><img src="../img/member1.png" alt=""></div>
-                    <div class="member-title">
-                        <h1>組長</h1>
-                    </div>
-                    <div class="member-info">
-                        <img src="../img/member1.1.png" alt="">
-                        <h2>組長 曾國綸</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum tenetur, nostrum veniam
-                            molestiae quis ratione mollitia exercitationem deleniti, eveniet, fugiat quia molestias
-                            voluptatibus enim dolorum fugit? Modi, rerum quidem.</p>
-                    </div>
-                </div>
-                <div class="member-con col-md-3" data-aos="zoom-in-up">
-                    <div class="member-con-img"><img src="../img/member2.jpg" alt=""></div>
-                    <div class="member-title">
-                        <h1>組員</h1>
-                    </div>
-                    <div class="member-info">
-                        <img src="../img/member2.1.png" alt="">
-                        <h2>組員 蕭鈞鴻</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum tenetur, nostrum veniam
-                            molestiae quis ratione mollitia exercitationem deleniti, eveniet, fugiat quia molestias
-                            voluptatibus enim dolorum fugit? Modi, rerum quidem.</p>
-                    </div>
-                </div>
-                <div class="member-con col-md-3" data-aos="zoom-in-up">
-                    <div class="member-con-img"><img src="../img/member3.jpeg" alt=""></div>
-                    <div class="member-title">
-                        <h1>組員</h1>
-                    </div>
-                    <div class="member-info">
-                        <img src="../img/member3.1.jpeg" alt="">
-                        <h2>組員 蕭柏睿</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum tenetur, nostrum veniam
-                            molestiae quis ratione mollitia exercitationem deleniti, eveniet, fugiat quia molestias
-                            voluptatibus enim dolorum fugit? Modi, rerum quidem.</p>
-                    </div>
-                </div>
-                <div class="member-con col-md-3" data-aos="zoom-in-up">
-                    <div class="member-con-img"><img src="../img/member4.jpeg" alt=""></div>
-                    <div class="member-title">
-                        <h1>組員</h1>
-                    </div>
-                    <div class="member-info">
-                        <img src="../img/member4.1.jpeg" alt="">
-                        <h2>組員 莊子賢</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum tenetur, nostrum veniam
-                            molestiae quis ratione mollitia exercitationem deleniti, eveniet, fugiat quia molestias
-                            voluptatibus enim dolorum fugit? Modi, rerum quidem.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- grouppage 修改版 -->
     <div class="creator-container">
         <article class="creator-con-header">
             <div class="header-bg">
@@ -177,7 +100,7 @@ include "top.inc.php";
         </div>
         <div class="creator-inf-phone">
             <div class="member-con-phone" data-aos="fade-right">
-                <img src="./images/leader.PNG" alt="">
+                <img src="./images/leader.png" alt="">
                 <div class="member-inf">
                     <h2>指導老師 俞旗山</h2>
                     <div class="h2-underline"></div>
@@ -185,7 +108,7 @@ include "top.inc.php";
                 </div>
             </div>
             <div class="member-con-phone" data-aos="fade-right">
-                <img src="./images/member1.png" alt="">
+                <img src="./images/member1.JPG" alt="">
                 <div class="member-inf">
                     <h2>組長 曾國綸</h2>
                     <div class="h2-underline"></div>

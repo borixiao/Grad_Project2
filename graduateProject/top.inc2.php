@@ -353,34 +353,6 @@ if (isset($user_id)) {
                     }
                 })
             });
-
-            // $("#order").on("click", function(e) {
-            //     e.preventDefault();
-            //     var order_name = $("#order_name").val();
-            //     var order_email = $("#order_email").val();
-            //     var order_phone = $("#order_phone").val();
-            //     var order_address = $("#order_address").val();
-            //     var order_pay = $("#order_pay").val();
-            //     $.ajax({
-            //         url: "user_order.php",
-            //         type: "POST",
-            //         data: {
-            //             order_name: order_name,
-            //             order_email: order_email,
-            //             order_phone: order_phone,
-            //             order_address: order_address,
-            //             order_pay: order_pay
-            //         },
-            //         success: function(result) {
-            //             if (result == 1) {
-            //                 window.location.href = window.location.href;
-            //                 $("#order_form").trigger("reset");
-            //             } else {
-            //                 window.location.href = "order.php";
-            //             }
-            //         }
-            //     })
-            // });
         });
     </script>
 </body>
