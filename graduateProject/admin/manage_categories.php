@@ -13,8 +13,10 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
     $catname = $res['catname'];
 }
 
-//按下submit, select DB categories的資料 
-if (isset($_POST['submit'])) {
+//按下submit, select DB categories的資料
+if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
+    $msg = "驗證失敗，請重新整理頁面後再試一次";
+} elseif (isset($_POST['submit'])) {
     $catname = mysqli_real_escape_string($conn, $_POST['catname']);
     $check = mysqli_query($conn, "select * from categories where
         catname = '$catname'");
@@ -59,6 +61,7 @@ if (isset($_POST['submit'])) {
         <a href="manage_categories.php">Add Categories</a>
     </div>
     <form method="post" action="">
+        <?php echo csrf_field(); ?>
         <input type="text" name="catname" placeholder="Category Name" value="<?php echo $catname; ?>" required>
         <input type="submit" name="submit" value="Submit">
 

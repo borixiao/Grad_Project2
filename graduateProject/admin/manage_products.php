@@ -27,8 +27,10 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
     $keywords = $res['keywords'];
 }
 
-//按下submit, select DB products的資料 
-if (isset($_POST['submit'])) {
+//按下submit, select DB products的資料
+if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
+    $msg = "驗證失敗，請重新整理頁面後再試一次";
+} elseif (isset($_POST['submit'])) {
     $pname = mysqli_real_escape_string($conn, $_POST['pname']);
     $cat_id = mysqli_real_escape_string($conn, $_POST['cat_id']);
     $subcat_id = mysqli_real_escape_string($conn, $_POST['subcat_id']);
@@ -38,10 +40,21 @@ if (isset($_POST['submit'])) {
     $long_desc = mysqli_real_escape_string($conn, $_POST['long_desc']);
     $keywords = mysqli_real_escape_string($conn, $_POST['keywords']);
 
-    $img = $_FILES['pimage']['name'];
-    $temp = $_FILES['pimage']['tmp_name'];
-    move_uploaded_file($temp, "./assets/images/".$img);
+    // 圖片上傳：白名單副檔名 + getimagesize() 驗證內容 + 隨機檔名，避免任意檔案上傳
+    $img = '';
+    if (!empty($_FILES['pimage']['name']) && $_FILES['pimage']['error'] === UPLOAD_ERR_OK) {
+        $allowedExt = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+        $ext = strtolower(pathinfo($_FILES['pimage']['name'], PATHINFO_EXTENSION));
+        $tmp = $_FILES['pimage']['tmp_name'];
+        $imageInfo = @getimagesize($tmp);
 
+        if (!in_array($ext, $allowedExt, true) || $imageInfo === false) {
+            $msg = "圖片格式不支援，僅接受 jpg / jpeg / png / gif / webp";
+        } else {
+            $img = uniqid('product_', true) . '.' . $ext;
+            move_uploaded_file($tmp, "./assets/images/" . $img);
+        }
+    }
 
     $check = mysqli_query($conn, "select * from products where
         pname = '$pname'");
@@ -91,6 +104,7 @@ if (isset($_POST['submit'])) {
         <!-- <a href="manage_categories.php">Add Products</a> -->
     </div>
     <form method="post" action="" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
         <input type="text" name="pname" placeholder="Product Name" value="<?php echo $pname; ?>" required>
         
         <select name="cat_id">
