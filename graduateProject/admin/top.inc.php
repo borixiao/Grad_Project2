@@ -1,5 +1,6 @@
 <?php
 include("inc/connection.inc.php");
+include("inc/csrf.inc.php");
 
 session_start();
 $uname = $_SESSION['uname'];
