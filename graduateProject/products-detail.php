@@ -1,7 +1,7 @@
 <!-- 商品細節頁 -->
 <?php
 include "top.inc.php";
-$pro_id = mysqli_real_escape_string($conn, $_GET['id']);
+$pro_id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 // include "function.inc.php";
 ?>
 

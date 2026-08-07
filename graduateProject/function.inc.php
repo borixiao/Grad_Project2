@@ -1,21 +1,23 @@
 <?php
 function get_product($conn, $limit = '', $cat_id = '', $subcat_id = '', $pro_id = '')
 {
+    // cat_id / subcat_id / pro_id / limit 都只允許數字，先轉成 int 再拼進 SQL，
+    // 避免無引號的數值型 SQL Injection（例如 cat_id=1 UNION SELECT ...）。
     $sql = "select * from products where status=1 ";
-    
-    if ($cat_id != '') {
-        $sql .= " and cat_id=$cat_id";
+
+    if ($cat_id !== '') {
+        $sql .= " and cat_id=" . (int) $cat_id;
     }
-    if ($subcat_id != '') {
-        $sql .= " and subcat_id=$subcat_id";
+    if ($subcat_id !== '') {
+        $sql .= " and subcat_id=" . (int) $subcat_id;
     }
-    if ($pro_id != '') {
-        $sql .= " and id=$pro_id";
+    if ($pro_id !== '') {
+        $sql .= " and id=" . (int) $pro_id;
     }
     $sql .= " order by id desc";
-    
-    if ($limit != '') {
-        $sql .= " limit $limit";
+
+    if ($limit !== '') {
+        $sql .= " limit " . (int) $limit;
     }
     $res = mysqli_query($conn, $sql);
     $data = array();
@@ -25,28 +27,6 @@ function get_product($conn, $limit = '', $cat_id = '', $subcat_id = '', $pro_id 
     return $data;
 }
 // select products DB的所有資料
-
-function get_usercart($conn, $cartpro_id= '', $qty = '')
-{
-    $cart_sql = "select * from user_cart ";
-    
-    if ($cartpro_id != '') {
-        $cart_sql .= " and pid=$cartpro_id";
-    }
-    if ($qty != '') {
-        $cart_sql .= " and qty=$qty";
-    }
-
-    // $cart_sql .= " order by id desc";
-    
-    $res = mysqli_query($conn, $cart_sql);
-    $cartdata = array();
-    while ($row = mysqli_fetch_assoc($res)) {
-        $cartdata[] = $row;
-    }
-    return $cartdata;
-}
-// select usercart DB的所有資料
 
 
 function getIP()

@@ -112,8 +112,11 @@ INSERT INTO products (id, cat_id, subcat_id, pname, mrp, sprice, short_desc, lon
 (11, 2, 2, 'adidas D ROSE 11 籃球鞋', 4300, 2980, '注重穩定與推進感的籃球鞋，適合後衛與切入型打法。', '中底回彈明確，鞋底提供靈活抓地力，能支援急停、變向與快速啟動。', 'adidas d rose basketball 籃球鞋', 'D ROSE 11.jpg', 1, NOW()),
 (12, 5, 1, 'Lotto SPIRITAIN 2000 GORE-TEX 休閒鞋', 3980, 2880, '防潑水休閒運動鞋，適合通勤與戶外輕旅行。', 'GORE-TEX 材質提升天候適應性，鞋型兼具復古運動感與日常搭配性。', 'lotto gore-tex 休閒鞋', 'SPIRITAIN 2000 GORE-TEX.jpg', 1, NOW());
 
+-- password 欄位存的是 password_hash() 產生的 bcrypt hash，不是明文。
+-- 下面兩筆分別是 'demo123' 與 'admin123' 的 bcrypt hash，登入頁會用 password_verify() 比對，
+-- 對外顯示的測試帳密（demo123 / admin123）不受影響。
 INSERT INTO user_registration (user_id, id, uname, email, mnumber, password, create_at) VALUES
-(1, 1, 'Demo User', 'demo@example.com', '0912345678', 'demo123', NOW());
+(1, 1, 'Demo User', 'demo@example.com', '0912345678', '$2b$10$Je99DvXFswCg.xH0feQS5OC1y9YVt63XVEh09qT2xuMzEEgJUuJKW', NOW());
 
 INSERT INTO admin (id, uname, pswd) VALUES
-(1, 'admin', 'admin123');
+(1, 'admin', '$2b$10$tWoyHlb7vThCDUv7SgMs8eopZrp2v0sW1gCpmc5JW3SvEfOEGEfF6');

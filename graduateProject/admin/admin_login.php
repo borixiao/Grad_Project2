@@ -4,13 +4,16 @@ $msg="";//紅色警語
 
 // 帳號登入 uname、pswd皆為admin
 if(isset($_POST['submit'])){
-    $uname = mysqli_real_escape_string($conn,$_POST['uname']);
-    $pswd = mysqli_real_escape_string($conn,$_POST['pswd']);
+    $uname = $_POST['uname'];
+    $pswd = $_POST['pswd'];
 
-    $query = mysqli_query($conn,"select * from admin where uname ='$uname' 
-                && pswd = '$pswd'");
-    $num = mysqli_num_rows($query);
-    if($num>0){
+    $stmt = mysqli_prepare($conn, "SELECT pswd FROM admin WHERE uname = ?");
+    mysqli_stmt_bind_param($stmt, "s", $uname);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_fetch_assoc($result);
+
+    if($row && password_verify($pswd, $row['pswd'])){
         session_start();
         $_SESSION['uname'] = $uname;
         header("location:index.php");
