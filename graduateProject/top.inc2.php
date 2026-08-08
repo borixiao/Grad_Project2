@@ -164,34 +164,36 @@ if (isset($user_id)) {
                 </ul>
             </nav>
 
-            <form class="header-search" action="./search.php" method="get" role="search">
-                <input type="search" name="q" placeholder="搜尋商品" aria-label="搜尋商品">
-                <button type="submit" aria-label="搜尋">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <div class="header-right">
+                <form class="header-search" action="./search.php" method="get" role="search">
+                    <input type="search" name="q" placeholder="搜尋商品" aria-label="搜尋商品">
+                    <button type="submit" aria-label="搜尋">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </form>
+
+                <div class="header-icons">
+                    <?php if (isset($user_id)) { ?>
+                        <a href="./logout.php" class="icon-link" title="登出">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="icon-label">登出</span>
+                        </a>
+                    <?php } else { ?>
+                        <a href="javascript:void(0)" onclick="lForm()" class="icon-link" title="登入 / 註冊">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="icon-label">登入</span>
+                        </a>
+                    <?php } ?>
+                    <a href="cart-page.php" class="icon-link" title="購物車">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="cart-count"><?php echo h($num) ?></span>
+                    </a>
+                </div>
+
+                <button class="header-button" type="button" aria-label="開啟選單" aria-expanded="false">
+                    <span class="list-line"></span>
                 </button>
-            </form>
-
-            <div class="header-icons">
-                <?php if (isset($user_id)) { ?>
-                    <a href="./logout.php" class="icon-link" title="登出">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        <span class="icon-label">登出</span>
-                    </a>
-                <?php } else { ?>
-                    <a href="javascript:void(0)" onclick="lForm()" class="icon-link" title="登入 / 註冊">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        <span class="icon-label">登入</span>
-                    </a>
-                <?php } ?>
-                <a href="cart-page.php" class="icon-link" title="購物車">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    <span class="cart-count"><?php echo h($num) ?></span>
-                </a>
             </div>
-
-            <button class="header-button" type="button" aria-label="開啟選單" aria-expanded="false">
-                <span class="list-line"></span>
-            </button>
 
             <!-- login頁面 -->
             <div class="toggleForm">
