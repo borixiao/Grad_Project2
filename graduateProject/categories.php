@@ -9,6 +9,14 @@ $cat_id = isset($_GET['cat_id']) ? (int) $_GET['cat_id'] : 0;
 </head>
 
 <body>
+    <?php $cat_name = get_category_name($conn, $cat_id); ?>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="./index.php">全部商品</a>
+        <?php if ($cat_name !== '') { ?>
+            <span>/</span>
+            <span class="current"><?php echo h($cat_name) ?></span>
+        <?php } ?>
+    </nav>
     <section class="newProducts">
         <div class="Indexrow">
             <?php

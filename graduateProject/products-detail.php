@@ -9,10 +9,28 @@ $pro_id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
+<?php
+$get_product = get_product($conn, '', '', '', $pro_id);
+if (count($get_product) > 0) {
+    $cat_name = get_category_name($conn, $get_product[0]['cat_id']);
+    $subcat_name = get_subcategory_name($conn, $get_product[0]['subcat_id']);
+    ?>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="./index.php">全部商品</a>
+        <?php if ($cat_name !== '') { ?>
+            <span>/</span>
+            <a href="./categories.php?cat_id=<?php echo h($get_product[0]['cat_id']) ?>"><?php echo h($cat_name) ?></a>
+        <?php } ?>
+        <?php if ($subcat_name !== '') { ?>
+            <span>/</span>
+            <a href="./subcategories.php?subcat_id=<?php echo h($get_product[0]['subcat_id']) ?>"><?php echo h($subcat_name) ?></a>
+        <?php } ?>
+    </nav>
+<?php } ?>
+
 <section class="singlePro">
     <div class="row">
         <?php
-        $get_product = get_product($conn, '', '', '', $pro_id);
         foreach ($get_product as $list) { ?>
 
             <div class="singlecol">

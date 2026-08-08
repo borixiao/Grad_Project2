@@ -34,6 +34,32 @@ function get_product($conn, $limit = '', $cat_id = '', $subcat_id = '', $pro_id 
 // select products DB的所有資料
 
 
+function get_category_name($conn, $cat_id)
+{
+    $cat_id = (int) $cat_id;
+    if ($cat_id <= 0) {
+        return '';
+    }
+    $stmt = mysqli_prepare($conn, "SELECT catname FROM categories WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $cat_id);
+    mysqli_stmt_execute($stmt);
+    $row = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+    return $row ? $row['catname'] : '';
+}
+
+function get_subcategory_name($conn, $subcat_id)
+{
+    $subcat_id = (int) $subcat_id;
+    if ($subcat_id <= 0) {
+        return '';
+    }
+    $stmt = mysqli_prepare($conn, "SELECT subname FROM subcategories WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $subcat_id);
+    mysqli_stmt_execute($stmt);
+    $row = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+    return $row ? $row['subname'] : '';
+}
+
 function getIP()
 {
     $ip = $_SERVER['REMOTE_ADDR'];

@@ -10,6 +10,14 @@ $subcat_id = isset($_GET['subcat_id']) ? (int) $_GET['subcat_id'] : 0;
 </head>
 
 <body>
+    <?php $subcat_name = get_subcategory_name($conn, $subcat_id); ?>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="./index.php">全部商品</a>
+        <?php if ($subcat_name !== '') { ?>
+            <span>/</span>
+            <span class="current"><?php echo h($subcat_name) ?></span>
+        <?php } ?>
+    </nav>
     <section class="newProducts">
         <div class="Indexrow">
             <?php
