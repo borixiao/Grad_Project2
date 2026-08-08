@@ -19,12 +19,13 @@ include "top.inc2.php";
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
     <!-- this page's exclusive css -->
+    <link rel="stylesheet" href="./css/wh-theme.css">
     <link rel="stylesheet" href="./css/homepage.css">
 </head>
 
 <body>
 
-    <main class="wh-home">
+    <main class="wh-theme wh-home">
 
         <!-- Hero -->
         <section class="wh-hero">

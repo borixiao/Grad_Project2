@@ -1,215 +1,153 @@
-body {
-	font-family: 'Noto Sans TC', sans-serif;
+/* 羽球專區頁面樣式，共用的設計 token／按鈕／marquee／rail／card／CTA 都在 css/wh-theme.css */
+
+/* ===== Hero ===== */
+.bd-hero {
+    padding: clamp(20px, 4vw, 40px) 0 0;
 }
-/* intro-area */
-.main-container{
+
+.bd-hero-frame {
+    position: relative;
+    max-width: 1360px;
+    margin: 0 auto;
+    height: min(80vh, 720px);
+    min-height: 440px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.bd-hero-frame img {
     width: 100%;
-    height: 75vh;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    filter: saturate(0.94);
 }
-.right-content{
+
+.bd-hero-frame::after {
+    content: "";
     position: absolute;
-    top: 150px;
-    right: 250px;
-    width: 30%;
-    height: 400px;
-    /* background-image: url(../images/502994.jpg); */
-    background-size: cover;
-    background-position: top center; /* Center the image */
-    border-radius: 25px;
-}
-.left-content{
-    width: 40%;
-    height: 500px;
-    border: #5788B6 10px solid;
-    border-radius: 45px;
-    margin-top: 100px;
-    margin-left: 250px;
-    position: relative; 
-}
-.text-area{
-   width: 400px;
-   height:480px;
-   margin: 0 auto;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(12, 12, 8, 0.82) 0%, rgba(12, 12, 8, 0.5) 42%, rgba(12, 12, 8, 0.05) 68%);
 }
 
-.title1{
-    color: #5788B6;
-    margin-top: 50px;
-    padding-left: 50px;
+.bd-hero-content {
+    position: absolute;
+    left: clamp(20px, 5vw, 64px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: var(--white);
+    max-width: 480px;
 }
-.title1 h1{
-    font-size: 4rem;
+
+.bd-hero-content .eyebrow {
+    color: rgba(255, 255, 255, 0.82);
+    animation: bdRise 0.9s cubic-bezier(.16,.8,.24,1) both;
+    animation-delay: 0.05s;
 }
-.title2{
-    padding-left: 115px;
+
+.bd-hero-content h1 {
+    margin: 18px 0 16px;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    animation: bdRise 0.9s cubic-bezier(.16,.8,.24,1) both;
+    animation-delay: 0.16s;
 }
-.title2 h1{
-    font-size: 4rem;
+
+.bd-hero-content p {
+    font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.86);
+    animation: bdRise 0.9s cubic-bezier(.16,.8,.24,1) both;
+    animation-delay: 0.26s;
 }
-.intro-area{
-    width: 66%;
-    margin-left:50px;
+
+.bd-hero-actions {
     margin-top: 30px;
-}
-.intro-area p{
-    font-size: 1.1rem;
-    font-weight:500;
-}
-
-/* brand-area */
-.brand-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-.brand-content{
-    width: 100%;
-    height: 290px;
-    display: flex;
-    padding: 0 200px;
-    /* justify-content: space-between; */
-}
-.brand1{
-    width: 33.333%;
-
-}
-.brand2{
-    width: 33.333%;
-
-}
-.brand3{
-    width: 33.333%;
-}
-.imgbox1 img{
-    width:80%;
-    height: 300px;
-    margin: 0 auto;
-    /* background-image: url(../images/badminton_icon1.png); */
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.imgbox2 img{
-    width: 80%;
-    height: 300px;
-    margin: 0 auto;
-    /* background-image: url(../images/badminton_icon2.png); */
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.imgbox3 img{
-    width: 80%;
-    height: 300px;
-    margin: 0 auto;
-    /* background-image: url(../images/badminton_icon3.png); */
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-/* process-content */
-.process-content{
-    width: 100%;
-    height: 70vh;
-    display: flex;
-    /* border: 1px black solid; */
-    padding: 0 250px;
-}
-.process-content img {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 22px;
+    animation: bdRise 0.9s cubic-bezier(.16,.8,.24,1) both;
+    animation-delay: 0.36s;
 }
-.process1{
-   width: 33.333%; 
+
+@keyframes bdRise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-.process2{
-    width: 33.333%; 
+
+@media (prefers-reduced-motion: reduce) {
+    .bd-hero-content .eyebrow,
+    .bd-hero-content h1,
+    .bd-hero-content p,
+    .bd-hero-actions { animation: none; opacity: 1; }
 }
-.process3{
-    width: 33.333%; 
+
+/* ===== 合作品牌／流程 區塊間距 ===== */
+.bd-brands {
+    padding: clamp(20px, 3vw, 32px) 0 0;
 }
-.imgbox4{
-    width: 250px;
-    height: 250px;
-    margin:0 auto ;
-    border-radius:50%;
-    background-size: cover;
+
+.bd-process {
+    padding: clamp(56px, 8vw, 96px) 0;
 }
-.imgbox5{
-    width: 250px;
-    height: 250px;
-    margin:0 auto ;
-    border-radius:50%;
-    background-size: cover;
+
+/* 流程卡片：沿用 .wh-card，但用編號取代 tag */
+.bd-process .wh-rail {
+    overflow-x: visible;
+    flex-wrap: wrap;
 }
-.imgbox6{
-    width: 250px;
-    height: 250px;
-    margin:0 auto ;
-    border-radius:50%;
-    background-size: cover;
+
+.bd-process .wh-card {
+    flex: 1 1 260px;
+    height: clamp(360px, 32vw, 440px);
 }
-.text4{
-  width: 75%;
-  margin: 0 auto;
-  margin-top: 15px;
-  text-align: center;
-}
-.text5{
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 15px;
-    text-align: center;
-}
-.text6{
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 15px;
-    text-align: center;
-}
-/* intro-content */
-.brand-title2{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-.intro-section{
-    width: 100%;
-    height: 500px;
-    padding:0 250px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.left-button{
-   width: 400px;
-   height: 100px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   /* border: 1px black solid; */
-   background-color: #5788B6;
-   border-radius: 30px;
-}
-.left-button:hover{
-    background-color: #4663ce;
-    transition: all .5s ease;
-}
-.right-lottie{
-    width: 450px;
-    height: 350px;
-    /* border: 1px black solid; */
-    background-image: url(../images/lottie\ test\ ai\ 01\ 2.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.button-link{
+
+.bd-process .wh-card-body .step-no {
     display: block;
-    width: 50%;
-    color: white;
-    
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
 }
-.button-link:hover{
-    text-decoration: none;
-    color: white;
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .bd-hero-frame {
+        height: min(70vh, 620px);
+    }
+}
+
+@media (max-width: 640px) {
+    .bd-hero-frame {
+        height: min(66vh, 560px);
+        min-height: 400px;
+        border-radius: 0;
+    }
+
+    .bd-hero-frame::after {
+        background: linear-gradient(180deg, rgba(12,12,8,0.15) 0%, rgba(12,12,8,0.88) 78%);
+    }
+
+    .bd-hero-content {
+        left: clamp(20px, 5vw, 32px);
+        right: clamp(20px, 5vw, 32px);
+        top: auto;
+        bottom: clamp(24px, 6vw, 40px);
+        transform: none;
+        max-width: none;
+    }
+
+    .bd-hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .bd-process .wh-card {
+        flex: 1 1 100%;
+    }
 }
