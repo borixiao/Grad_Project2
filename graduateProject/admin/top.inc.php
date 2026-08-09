@@ -1,5 +1,6 @@
 <?php
 include("inc/connection.inc.php");
+include("inc/csrf.inc.php");
 
 session_start();
 $uname = $_SESSION['uname'];
@@ -25,7 +26,7 @@ if ($uname) {
 
 <body>
     <header>
-        <p>管理者名稱 : <?php echo $uname; ?></p>
+        <p>管理者名稱 : <?php echo h($uname); ?></p>
         <a href="logout.php">Logout</a>
     </header>
 </body>

@@ -3,7 +3,7 @@ include("top.inc.php");
 include("left.inc.php");
 include("footer.inc.php");
 
-if(isset($_GET['type']) && $_GET['type']!=''){
+if(isset($_GET['type']) && $_GET['type']!='' && csrf_verify($_GET['csrf_token'] ?? '')){
     $type = mysqli_real_escape_string($conn,$_GET['type']);
     if($type == 'status'){
         $opt = mysqli_real_escape_string($conn,$_GET['operation']);
@@ -20,14 +20,17 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 
 
 //針對該id做delete動作
-if(isset($_GET['id']) && $_GET['id']!='') {
+if(isset($_GET['id']) && $_GET['id']!='' && csrf_verify($_GET['csrf_token'] ?? '')) {
     $id = mysqli_real_escape_string($conn,$_GET['id']);
     $img = mysqli_query($conn,"select * from products where id = '$id'");
     $result = mysqli_fetch_assoc($img);
-    unlink("images/".$result['pimage']);
+    if (!empty($result['pimage'])) {
+        @unlink("assets/images/".$result['pimage']);
+    }
     $delete = mysqli_query($conn, "DELETE FROM `products` WHERE id = '$id'");
     header("location:products.php");
 }
+$token = csrf_token();
 ?>
 
 <div class="rightDiv">
@@ -51,20 +54,20 @@ if(isset($_GET['id']) && $_GET['id']!='') {
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['pname']."</td>
+                        <td>".h($data['pname'])."</td>
                         <td>
-                            <a href='?id=".$data['id']."'>Delete</a> &nbsp;
+                            <a href='?id=".h($data['id'])."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
                                 &nbsp;
-                            <a href='manage_products.php?id=".$data['id']."'>Edit</a>
+                            <a href='manage_products.php?id=".h($data['id'])."'>Edit</a>
                         </td>
 
                         <td>"; ?>
                         <?php
                             if($data['status']==1){
-                               echo"<a href='?type=status&operation=deactive&s_id=".$data['id']."'>上架Active</a>"; 
+                               echo"<a href='?type=status&operation=deactive&s_id=".h($data['id'])."&csrf_token=".urlencode($token)."'>上架Active</a>";
                             }else{
-                                echo"<a href='?type=status&operation=active&s_id=".$data['id']."'>下架Deactive</a>"; 
-                            }                          
+                                echo"<a href='?type=status&operation=active&s_id=".h($data['id'])."&csrf_token=".urlencode($token)."'>下架Deactive</a>";
+                            }
                         echo "</td>
                     </tr>
                     ";

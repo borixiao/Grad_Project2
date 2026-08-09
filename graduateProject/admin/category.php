@@ -4,10 +4,11 @@ include("left.inc.php");
 include("footer.inc.php");
 
 //針對該id做delete動作
-if(isset($_GET['id']) && $_GET['id']!='') {
+if(isset($_GET['id']) && $_GET['id']!='' && csrf_verify($_GET['csrf_token'] ?? '')) {
     $id = mysqli_real_escape_string($conn,$_GET['id']);
     $delete = mysqli_query($conn, "DELETE FROM `categories` WHERE id = '$id'");
 }
+$token = csrf_token();
 ?>
 
 <div class="rightDiv">
@@ -31,11 +32,11 @@ if(isset($_GET['id']) && $_GET['id']!='') {
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['catname']."</td>
+                        <td>".h($data['catname'])."</td>
                         <td>
-                            <a href='?id=".$data['id']."'>Delete</a> &nbsp;
+                            <a href='?id=".h($data['id'])."&csrf_token=".urlencode($token)."' onclick=\"return confirm('確定要刪除嗎？');\">Delete</a> &nbsp;
                                 &nbsp;
-                            <a href='manage_categories.php?id=".$data['id']."'>Edit</a>
+                            <a href='manage_categories.php?id=".h($data['id'])."'>Edit</a>
                         </td>
                     </tr>
                     ";

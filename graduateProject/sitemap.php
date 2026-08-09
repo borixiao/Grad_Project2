@@ -33,55 +33,6 @@ include "top.inc2.php";
 
 <body>
 
-    <!-- 舊版 -->
-    <!-- <div class="sitemap-page container">
-        <div class="home-section section row">
-            <div class="home-section-box">
-                <h1 class="col-sm-12">首頁</h1>
-                <h2 class="col-sm-12"><a href="./index.html">文宏運動用品店</a></h2>
-            </div>
-        </div>
-        <div class="arrow">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_vejj8cpm.json"
-                background="transparent" speed="1" style="width: 70px; height: 70px;" loop autoplay></lottie-player>
-        </div>
-        <div class="header-sction section row">
-            <h1 class="col-sm-12">Header</h1>
-            <h2 class="col-sm-2"><a href="">品牌列表</a></h2>
-            <h2 class="col-sm-2"><a href="">專業運動</a></h2>
-            <h2 class="col-sm-2"><a href="">棒球專區</a></h2>
-            <h2 class="col-sm-2"><a href="">羽毛球專區</a></h2>
-            <h2 class="col-sm-2"><a href="">文宏故事屋</a></h2>
-        </div>
-        <div class="header-in-section section row">
-            <div class="brand col-sm-6">
-                <h1>品牌列表</h1>
-                <div class="brand-in">
-                    <h2 class="col-sm-8"><a href="">Nike</a></h2>
-                    <h2 class="col-sm-8"><a href="">Adidas</a></h2>
-                    <h2 class="col-sm-8"><a href="">Mizuno</a></h2>
-                    <h2 class="col-sm-8"><a href="">Asics</a></h2>
-                    <h2 class="col-sm-8"><a href="">Skechers</a></h2>
-                    <h2 class="col-sm-8"><a href="">Keds</a></h2>
-                </div>
-            </div>
-            <div class="spots col-sm-6">
-                <h1>專業運動</h1>
-                <div class="sports-in">
-                    <h2 class="col-sm-8"><a href="">球類用品</a></h2>
-                    <h2 class="col-sm-8"><a href="">訓練器材</a></h2>
-                    <h2 class="col-sm-8"><a href="">登山器具</a></h2>
-                    <h2 class="col-sm-8"><a href="">自行車</a></h2>
-                    <h2 class="col-sm-8"><a href="">游泳</a></h2>
-                    <h2 class="col-sm-8"><a href="">滑板</a></h2>
-                    <h2 class="col-sm-8"><a href="">直排輪</a></h2>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- 修改版 -->
     <div class="sitemap-page">
         <div class="title">
             <div class="title-text">
@@ -91,7 +42,7 @@ include "top.inc2.php";
         </div>
         <div class="sitemap-img">
             <div style="width: 100%;">
-                <img src="./images/sitemap.JPG" alt="" style="width: 100%;">
+                <img src="./images/sitemap.jpg" alt="" style="width: 100%;">
             </div>
         </div>
     </div>

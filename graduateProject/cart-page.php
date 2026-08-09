@@ -27,16 +27,20 @@ session_start();
             $ip = getIP();
 
             if (isset($user_id)) { // -----------------------User-cart---------------------------
-                $usercartSql = "SELECT * FROM `user_cart` WHERE `user_id` = '$user_id' and `ip_address` = '$ip'";
-                $con = mysqli_query($conn, $usercartSql);
+                $stmt = mysqli_prepare($conn, "SELECT * FROM `user_cart` WHERE `user_id` = ? AND `ip_address` = ?");
+                mysqli_stmt_bind_param($stmt, "is", $user_id, $ip);
+                mysqli_stmt_execute($stmt);
+                $con = mysqli_stmt_get_result($stmt);
                 $check = mysqli_num_rows($con);
                 $Total_price = 0;
                 $Total_total = 0;
                 if ($check > 0) {
                     while ($row = mysqli_fetch_assoc($con)) {
-                        $id = $row['pid'];
-                        $sql = mysqli_query($conn, "select * from products where id = '$id'");
-                        $data = mysqli_fetch_assoc($sql);
+                        $id = (int) $row['pid'];
+                        $prodStmt = mysqli_prepare($conn, "SELECT * FROM products WHERE id = ?");
+                        mysqli_stmt_bind_param($prodStmt, "i", $id);
+                        mysqli_stmt_execute($prodStmt);
+                        $data = mysqli_fetch_assoc(mysqli_stmt_get_result($prodStmt));
                         $sub_total = $row['qty'] * $data['sprice'];
                         $Total_price = $Total_price + $sub_total;
                         $Total_total = $Total_price;
@@ -44,17 +48,17 @@ session_start();
                         <tr>
                             <td>
                                 <div class="cart-info">
-                                    <img src="./admin/assets/images/<?php echo $data['pimage'] ?>" width="80px">
+                                    <img src="./admin/assets/images/<?php echo h($data['pimage']) ?>" width="80px">
                                     <div>
-                                        <p><?php echo $data['pname'] ?></p>
-                                        <small>價格 : $<?php echo $data['sprice'] ?></small>
+                                        <p><?php echo h($data['pname']) ?></p>
+                                        <small>價格 : $<?php echo h($data['sprice']) ?></small>
                                         <br>
-                                        <a href="add_cart.php?id=<?php echo $row['id'] ?>">移出</a>
+                                        <a href="add_cart.php?id=<?php echo h($row['id']) ?>">移出</a>
                                     </div>
                                 </div>
                             </td>
-                            <td><?php echo $row['qty'] ?></td>
-                            <td>$<?php echo $sub_total ?></td>
+                            <td><?php echo h($row['qty']) ?></td>
+                            <td>$<?php echo h($sub_total) ?></td>
                         </tr>
                     <?php }
                 } else {
@@ -62,16 +66,20 @@ session_start();
                     header("location:index.php");
                 }
             } else { // -----------------------Guest-cart---------------------------
-                $guestcartSql = "SELECT * FROM `guest_cart` WHERE `ip_address` = '$ip'";
-                $con = mysqli_query($conn, $guestcartSql);
+                $stmt = mysqli_prepare($conn, "SELECT * FROM `guest_cart` WHERE `ip_address` = ?");
+                mysqli_stmt_bind_param($stmt, "s", $ip);
+                mysqli_stmt_execute($stmt);
+                $con = mysqli_stmt_get_result($stmt);
                 $check = mysqli_num_rows($con);
                 $Total_price = 0;
                 $Total_total = 0;
                 if ($check > 0) {
                     while ($row = mysqli_fetch_assoc($con)) {
-                        $id = $row['pid'];
-                        $sql = mysqli_query($conn, "select * from products where id = '$id'");
-                        $data = mysqli_fetch_assoc($sql);
+                        $id = (int) $row['pid'];
+                        $prodStmt = mysqli_prepare($conn, "SELECT * FROM products WHERE id = ?");
+                        mysqli_stmt_bind_param($prodStmt, "i", $id);
+                        mysqli_stmt_execute($prodStmt);
+                        $data = mysqli_fetch_assoc(mysqli_stmt_get_result($prodStmt));
                         $sub_total = $row['qty'] * $data['sprice'];
                         $Total_price = $Total_price + $sub_total;
                         $Total_total = $Total_price + 110;
@@ -79,17 +87,17 @@ session_start();
                         <tr>
                             <td>
                                 <div class="cart-info">
-                                    <img src="./admin/assets/images/<?php echo $data['pimage'] ?>" width="80px">
+                                    <img src="./admin/assets/images/<?php echo h($data['pimage']) ?>" width="80px">
                                     <div>
-                                        <p><?php echo $data['pname'] ?></p>
-                                        <small>價格 : $<?php echo $data['sprice'] ?></small>
+                                        <p><?php echo h($data['pname']) ?></p>
+                                        <small>價格 : $<?php echo h($data['sprice']) ?></small>
                                         <br>
-                                        <a href="add_cart.php?id=<?php echo $row['id'] ?>">移出</a>
+                                        <a href="add_cart.php?id=<?php echo h($row['id']) ?>">移出</a>
                                     </div>
                                 </div>
                             </td>
-                            <td><?php echo $row['qty'] ?></td>
-                            <td>$<?php echo $sub_total ?></td>
+                            <td><?php echo h($row['qty']) ?></td>
+                            <td>$<?php echo h($sub_total) ?></td>
                         </tr>
             <?php }
                 } else {

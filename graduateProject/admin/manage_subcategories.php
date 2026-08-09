@@ -13,8 +13,10 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
     $subname = $res['subname'];
 }
 
-//按下submit, select DB categories的資料 
-if (isset($_POST['submit'])) {
+//按下submit, select DB categories的資料
+if (isset($_POST['submit']) && !csrf_verify($_POST['csrf_token'] ?? '')) {
+    $msg = "驗證失敗，請重新整理頁面後再試一次";
+} elseif (isset($_POST['submit'])) {
     $subname = mysqli_real_escape_string($conn, $_POST['subname']);
     $check = mysqli_query($conn, "select * from subcategories where
         subname = '$subname'");
@@ -59,7 +61,8 @@ if (isset($_POST['submit'])) {
         <a href="manage_subcategories.php">Add SubCategories</a>
     </div>
     <form method="post" action="">
-        <input type="text" name="subname" placeholder="SubCategory Name ( 請輸入中文 )" value="<?php echo $subname; ?>" required>
+        <?php echo csrf_field(); ?>
+        <input type="text" name="subname" placeholder="SubCategory Name ( 請輸入中文 )" value="<?php echo h($subname); ?>" required>
         <input type="submit" name="submit" value="Submit">
 
         <div class="msg"><?php echo $msg; ?></div>

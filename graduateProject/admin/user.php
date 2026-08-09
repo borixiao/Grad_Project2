@@ -4,9 +4,9 @@ include("left.inc.php");
 include("footer.inc.php");
 
 //針對該id做delete動作
-if(isset($_GET['id']) && $_GET['id']!='') {
+if(isset($_GET['id']) && $_GET['id']!='' && csrf_verify($_GET['csrf_token'] ?? '')) {
     $id = mysqli_real_escape_string($conn,$_GET['id']);
-    $delete = mysqli_query($conn, "DELETE FROM `user_registration` WHERE id = '$user_id'");
+    $delete = mysqli_query($conn, "DELETE FROM `user_registration` WHERE user_id = '$id'");
 }
 ?>
 
@@ -33,11 +33,11 @@ if(isset($_GET['id']) && $_GET['id']!='') {
                     echo "
                     <tr>
                         <td>".$i++."</td>
-                        <td>".$data['uname']."</td>
-                        <td>".$data['user_id']."</td>
-                        <td>".$data['email']."</td>
-                        <td>".$data['mnumber']."</td>
-                        <td>".$data['password']."</td>
+                        <td>".h($data['uname'])."</td>
+                        <td>".h($data['user_id'])."</td>
+                        <td>".h($data['email'])."</td>
+                        <td>".h($data['mnumber'])."</td>
+                        <td>".h($data['password'])."</td>
                     </tr>
                     ";
                 }

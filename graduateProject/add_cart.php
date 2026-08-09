@@ -14,20 +14,8 @@ if (isset($_POST['cart'])) {
         if ($num = mysqli_num_rows($check) > 0) {
             echo "<script>alert('該產品已放到購物車囉 !')</script>";
             echo "<script>window.open('index.php','_self');</script>";
-            // $data = mysqli_num_rows($check);
-            // $uqty = $data['qty'];
-            // $uid = $data['id'];
-            // if ($uqty == $qty) {
-            //     header("location:cart-page.php");
-            //     die();
-            // } else {
-            //     $udate = mysqli_query($conn, "UPDATE 
-            //     `user_cart` SET `qty`='$qty' WHERE id='$uid'");
-            //     header("location:cart-page.php");
-            //     die();
-            // }
         } else {
-            $query = mysqli_query($conn, "INSERT INTO 
+            $query = mysqli_query($conn, "INSERT INTO
                 `user_cart`( `user_id`, `pid`, `qty`, `create_on`, `ip_address`) VALUES ('$user_id','$id','$qty',NOW(),'$ip')");
             header("location:cart-page.php");
             die();
@@ -38,20 +26,8 @@ if (isset($_POST['cart'])) {
         if ($num = mysqli_num_rows($check) > 0) {
             echo "<script>alert('該產品已放到購物車囉 !')</script>";
             echo "<script>window.open('index.php','_self');</script>";
-            // $data = mysqli_num_rows($check);
-            // $uqty = $data['qty'];
-            // $uid = $data['id'];
-            // if ($uqty == $qty) {
-            //     header("location:cart-page.php");
-            //     die();
-            // } else {
-            //     $udate = mysqli_query($conn, "UPDATE 
-            //     `guest_cart` SET `qty`='$qty' WHERE id='$uid'");
-            //     header("location:cart-page.php");
-            //     die();
-            // }
         } else {
-            $query = mysqli_query($conn, "INSERT INTO 
+            $query = mysqli_query($conn, "INSERT INTO
                 `guest_cart`(`pid`, `qty`, `create_on`, `ip_address`) VALUES ('$id','$qty',NOW(),'$ip')");
             header("location:cart-page.php");
             die();

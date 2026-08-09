@@ -1,7 +1,6 @@
 <?php
 include "connection.inc.php";
 include "top.inc2.php";
-// include "function.inc.php";
 ?>
 
 <head>
@@ -9,206 +8,136 @@ include "top.inc2.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>文宏運動用品店</title>
-    <!-- bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- slick slider -->
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- google font -->
+
+    <!-- google font：補上首頁需要的字重 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
-    <!-- aos animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- main css -->
     <link rel="stylesheet" href="./css/style.css">
-    <!-- this page's exclusive css -->
-    <link rel="stylesheet" href="./css/homepage.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/sitemap.css">
-
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- this page's exclusive css -->
+    <link rel="stylesheet" href="./css/wh-theme.css">
+    <link rel="stylesheet" href="./css/homepage.css">
 </head>
 
 <body>
 
-    <!-- 第一部分 -->
-    <article class="part1">
-        <section class="part1-img">
-            <img src="./images/whhompagelogo.png" alt="">
+    <main class="wh-theme wh-home">
+
+        <!-- Hero -->
+        <section class="wh-hero">
+            <div class="wh-hero-frame">
+                <img src="./images/head_img.jpeg" alt="文宏運動用品店員林門市夜景">
+                <div class="wh-hero-content">
+                    <span class="eyebrow">員林在地・專業運動用品</span>
+                    <h1>為你的每一場比賽<br>做好準備</h1>
+                    <p>從球拍穿線到球鞋挑選，文宏運動用品店陪你打理每一項訓練日常，把專業留給真正懂的人。</p>
+                    <div class="wh-hero-actions">
+                        <a href="#catalogue" class="wh-btn wh-btn--light">探索商品</a>
+                        <a href="#catalogue" class="wh-scroll-link">看看有哪些分類 <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="part1-btn">
-            <a href="#partfour">了解更多</a>
+
+        <!-- 品牌跑馬燈 -->
+        <div class="wh-marquee" aria-hidden="true">
+            <div class="wh-marquee-track">
+                <span>NIKE</span><span>ADIDAS</span><span>MIZUNO</span><span>LOTTO</span><span>KEDS</span><span>SKECHERS</span>
+                <span>NIKE</span><span>ADIDAS</span><span>MIZUNO</span><span>LOTTO</span><span>KEDS</span><span>SKECHERS</span>
+            </div>
+        </div>
+
+        <!-- 分類 rail -->
+        <section class="wh-rail-section" id="catalogue">
+            <div class="wh-wrap">
+                <div class="wh-section-head">
+                    <div>
+                        <span class="eyebrow">依專長分類</span>
+                        <h2>找到你的專屬裝備</h2>
+                    </div>
+                    <a href="./sitemap.php" class="wh-more">查看完整分類</a>
+                </div>
+
+                <div class="wh-rail">
+                    <a href="./badminton.php" class="wh-card">
+                        <img src="./images/badmin-header.jpg" alt="羽球專區">
+                        <div class="wh-card-body">
+                            <span class="tag">Badminton</span>
+                            <h3>羽球專區</h3>
+                            <p>三十年經驗老師傅穿線，球拍、球鞋一次備齊。</p>
+                            <span class="go">前往選購 <span>→</span></span>
+                        </div>
+                    </a>
+                    <div class="wh-card wh-card--solid">
+                        <div class="wh-card-body">
+                            <span class="tag">Baseball</span>
+                            <h3>棒球專區</h3>
+                            <p>手套、球棒、打擊裝備，依年齡與需求協助挑選。</p>
+                            <span class="go">敬請期待 <span>→</span></span>
+                        </div>
+                    </div>
+                    <a href="./categories.php?cat_id=1" class="wh-card">
+                        <img src="./images/1F_2F 新店內擺設_210613.png" alt="專業運動用品">
+                        <div class="wh-card-body">
+                            <span class="tag">All Sports</span>
+                            <h3>專業運動</h3>
+                            <p>跑步、籃球、排球到登山，機能與實用兼具。</p>
+                            <span class="go">前往選購 <span>→</span></span>
+                        </div>
+                    </a>
+                    <a href="./story.php" class="wh-card">
+                        <img src="./images/head_img.jpeg" alt="文宏故事屋">
+                        <div class="wh-card-body">
+                            <span class="tag">Our Story</span>
+                            <h3>故事屋</h3>
+                            <p>陪伴員林運動愛好者，走過每一個訓練日常。</p>
+                            <span class="go">閱讀故事 <span>→</span></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </section>
-    </article>
-    <!-- 第一部分END -->
 
-    <!-- 第二部分 -->
-    <div class="part2 container">
-        <div class="brand row">
-            <div class="br-container col-md-2 col-sm-4 col-4">
-                <img src="./images/nike logo.png" alt="">
+        <!-- 品牌故事 -->
+        <section class="wh-story">
+            <div class="wh-wrap">
+                <div class="wh-story-grid">
+                    <div>
+                        <span class="eyebrow">關於文宏</span>
+                        <h2>三十年的手感<br>藏在每一次穿線裡</h2>
+                        <p>比起促銷折扣，我們更相信專業服務值得信任。從球拍維修到球鞋挑選，文宏運動用品店持續在員林，陪伴在地運動愛好者找到真正合適的裝備。</p>
+                        <a href="./story.php" class="wh-btn wh-btn--dark">閱讀我們的故事</a>
+                    </div>
+                    <div class="wh-story-media">
+                        <img src="./images/1F_2F 新店內擺設_210613.png" alt="文宏運動用品店內部陳設">
+                        <div class="wh-story-stat">
+                            <strong>30+</strong>
+                            <span>年穿線與服務經驗</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="br-container col-md-2 col-sm-4 col-4">
-                <img src="./images/adidas logo.png" alt="">
-            </div>
-            <div class="br-container col-md-2 col-sm-4 col-4">
-                <img src="./images/mizuno logo.png" alt="">
-            </div>
-            <div class="br-container col-md-2 col-sm-4 col-4">
-                <img src="./images/lotto logo.jpg" alt="">
-            </div>
-            <div class="br-container col-md-2 col-sm-4 col-4">
-                <img src="./images/keds logo.png" alt="">
-            </div>
-            <div class="br-container col-md-2 col-sm-4 col-4">
-                <img src="./images/sketchers logo.png" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- 第二部分END -->
+        </section>
 
-    <!-- 第三部分 -->
-    <div class="part3">
-        <div class="container">
-            <h1>最新消息</h1>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./images/sports pt2.jpg" class="d-block w-100 ">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/sports pt3.jpg" class="d-block w-100 ">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/sports pt4.jpg" class="d-block w-100 ">
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+        <!-- CTA -->
+        <section class="wh-cta">
+            <div class="wh-wrap">
+                <span class="eyebrow">準備出發</span>
+                <h2>準備好升級你的裝備了嗎？</h2>
+                <p>從羽球到日常訓練，帶齊你下一次全力以赴需要的一切。</p>
+                <a href="#catalogue" class="wh-btn wh-btn--invert">立即選購</a>
             </div>
-        </div>
-    </div>
-    <!-- 第三部分END -->
+        </section>
 
-    <!-- 第四部份 -->
-    <section id="partfour" class="part4">
-        <h1>特色服務</h1>
-        <div class="part4-slider container">
-            <div class="slider-con">
-                <div class="slider-part">
-                    <div class="slider-img">
-                        <img src="./images/badminton intro.png" alt="">
-                    </div>
-                    <div class="slider-intro">
-                        <h2>羽毛球專區</h2>
-                        <div class="underline"></div>
-                        <h3>秉持最好的職業精神，用細心和嚴謹地態度以及最高的品質完成一支支的球拍。超過三十年的穿線經驗的老師傅，嫻熟的操作穿線機並用最少的時間給顧客最好的服務。</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-con">
-                <div class="slider-part">
-                    <div class="slider-intro">
-                        <h2>棒球專區</h2>
-                        <div class="underline"></div>
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nihil quidem quos,
-                            perspiciatis quaerat asperiores autem quasi nisi magni maiores quas quia maxime illo.
-                            Ducimus laudantium tenetur veniam laborum accusamus.</h3>
-                    </div>
-                    <div class="slider-img">
-                        <img src="./images/baseball intro.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="slider-con">
-                <div class="slider-part">
-                    <div class="slider-img">
-                        <img src="./images/sports info.png" alt="">
-                    </div>
-                    <div class="slider-intro">
-                        <h2>專業運動</h2>
-                        <div class="underline"></div>
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nihil quidem quos,
-                            perspiciatis quaerat asperiores autem quasi nisi magni maiores quas quia maxime illo.
-                            Ducimus laudantium tenetur veniam laborum accusamus.</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-con">
-                <div class="slider-part">
-                    <div class="slider-intro">
-                        <h2>文宏故事屋</h2>
-                        <div class="underline"></div>
-                        <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nihil quidem quos,
-                            perspiciatis quaerat asperiores autem quasi nisi magni maiores quas quia maxime illo.
-                            Ducimus laudantium tenetur veniam laborum accusamus.</h3>
-                    </div>
-                    <div class="slider-img">
-                        <img src="./images/WHstore.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="slider-con">
-                <div class="slider-img">
-                    <img src="../img/example.jpg" alt="">
-                </div>
-                <h3>slider5</h3>
-                <p>slider5 info</p>
-            </div> -->
-        </div>
-    </section>
-    <!-- 第四部份end -->
+    </main>
 
     <?php
     include "footer.inc.php";
     ?>
 
-    <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-    <script src="../js/main.js"></script>
-
-    <!-- aos animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
-    <!-- slick slider-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="../js/slick.js"></script>
     <script src="./js/main.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
 </body>
