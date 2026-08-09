@@ -111,7 +111,16 @@ INSERT INTO products (id, cat_id, subcat_id, pname, mrp, sprice, short_desc, lon
 (9, 3, 1, 'ASICS GEL-CUMULUS 23 跑鞋', 4680, 3280, '兼具緩震與穩定的跑鞋，適合規律跑步訓練。', 'GEL 緩震科技降低落地衝擊，鞋面透氣且包覆自然，適合一般跑者日常累積里程。', 'asics gel cumulus 跑鞋', 'GEL-CUMULUS 23.jpg', 1, NOW()),
 (10, 3, 5, 'ASICS COURT FF NOVAK 網球鞋', 5280, 3980, '球場型運動鞋，適合快速啟動與側向移動。', '鞋身支撐性佳，外底耐磨且抓地穩定，適合網球、羽球與多方向移動訓練。', 'asics court 網球 羽球', 'COURT FF NOVAK.jpg', 1, NOW()),
 (11, 2, 2, 'adidas D ROSE 11 籃球鞋', 4300, 2980, '注重穩定與推進感的籃球鞋，適合後衛與切入型打法。', '中底回彈明確，鞋底提供靈活抓地力，能支援急停、變向與快速啟動。', 'adidas d rose basketball 籃球鞋', 'D ROSE 11.jpg', 1, NOW()),
-(12, 5, 1, 'Lotto SPIRITAIN 2000 GORE-TEX 休閒鞋', 3980, 2880, '防潑水休閒運動鞋，適合通勤與戶外輕旅行。', 'GORE-TEX 材質提升天候適應性，鞋型兼具復古運動感與日常搭配性。', 'lotto gore-tex 休閒鞋', 'SPIRITAIN 2000 GORE-TEX.jpg', 1, NOW());
+(12, 5, 1, 'Lotto SPIRITAIN 2000 GORE-TEX 休閒鞋', 3980, 2880, '防潑水休閒運動鞋，適合通勤與戶外輕旅行。', 'GORE-TEX 材質提升天候適應性，鞋型兼具復古運動感與日常搭配性。', 'lotto gore-tex 休閒鞋', 'SPIRITAIN 2000 GORE-TEX.jpg', 1, NOW()),
+(13, 3, 3, 'ASICS GEL-RENMA 中性排球鞋', 3280, 2680, '排球場地訓練鞋，適合室內排球運動使用。', '橡膠大底提供室內場地穩定抓地力，鞋面透氣網布搭配包覆設計，適合訓練與比賽穿著。', 'asics volleyball 排球鞋', 'GEL-RENMA 中性款排球鞋.jpg', 1, NOW()),
+(14, 3, 2, 'ASICS NOVA SURGE TOKYO 男款籃球鞋', 5280, 4280, '高筒籃球鞋，提供腳踝支撐與場上緩震反應。', '中高筒鞋身包覆腳踝，緩震中底吸收跳躍落地衝擊，適合切入、急停與跳投等籃球動作。', 'asics basketball 籃球鞋', 'NOVA SURGE TOKYO 男款籃球鞋.jpg', 1, NOW()),
+(15, 3, 1, 'ASICS METASPRINT 競速跑鞋', 6200, 4980, '輕量競速跑鞋，適合追求配速的路跑訓練。', '透氣網布鞋面搭配回彈中底，減輕跑動負擔，適合間歇訓練與路跑賽事穿著。', 'asics running 跑鞋 競速', 'METASPRINT 中性款跑鞋.jpg', 1, NOW()),
+(16, 3, 1, 'ASICS GT-2000 支撐型慢跑鞋', 4280, 3580, '穩定支撐型慢跑鞋，適合長時間訓練穿著。', '足弓支撐結構提升穩定性，緩震中底降低長距離跑步的關節負擔，日常訓練首選。', 'asics gt-2000 慢跑鞋', 'GT-2000.jpg', 1, NOW()),
+(17, 1, 2, 'NIKE LeBron Witness 籃球鞋', 3980, 3280, '簽名系列籃球鞋，兼顧支撐性與場上靈活度。', '中筒鞋身包覆搭配抓地力大底，適合強對抗打法與需要穩定支撐的球員。', 'nike lebron basketball 籃球鞋', 'NIKE LEBRON witness.jpg', 1, NOW()),
+(18, 1, 2, 'NIKE Kyrie Flytrap 籃球鞋', 3680, 2980, '低筒輕量籃球鞋，適合強調速度與變向的打法。', '貼合腳型的低筒設計提升靈活度，適合後衛球員急停變向與快速啟動。', 'nike kyrie basketball 籃球鞋', 'NIKE kyrie flytrap.jpg', 1, NOW()),
+(19, 2, 1, 'adidas Stan Smith 聯名限定款', 3280, 2680, '經典鞋型聯名限定配色，日常穿搭百搭選擇。', '皮革鞋面搭配撞色大底細節，兼具復古經典感與街頭穿搭風格。', 'adidas stan smith 休閒鞋', 'ZOZO CHAMPIONSHIP STAN SMITH.jpg', 1, NOW()),
+(20, 1, 4, 'NIKE NSW 運動短袖上衣', 1280, 980, '棉質透氣短袖上衣，適合日常運動與休閒穿著。', '寬鬆版型搭配親膚棉質布料，穿著舒適透氣，適合訓練後或日常休閒穿搭。', 'nike tee 服飾', 'NIKE NSW SS TEE UNI ATHLTC.jpg', 1, NOW()),
+(21, 1, 1, 'NIKE Pegasus 慢跑鞋', 4380, 3680, '經典訓練跑鞋系列，兼顧緩震與穩定表現。', '回彈中底提供日常訓練所需的緩震支撐，適合中長距離訓練與日常慢跑。', 'nike pegasus running 慢跑鞋', 'Nike Pegasus.jpg', 1, NOW());
 
 -- password 欄位存的是 password_hash() 產生的 bcrypt hash，不是明文。
 -- 下面兩筆分別是 'demo123' 與 'admin123' 的 bcrypt hash，登入頁會用 password_verify() 比對，
