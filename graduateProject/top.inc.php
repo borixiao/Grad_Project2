@@ -62,135 +62,169 @@ if(isset($user_id)) {
             <div class="header-logo">
                 <a href="./index.php"><img class="w-100" src="./images/WHlogo-719px.png" alt=""></a>
             </div>
-            <button class="header-button" type="button" aria-label="開啟選單" aria-expanded="false">
-                <span class="list-line"></span>
-            </button>
-            <div class="header-list-container">
-                <ul class="header-list" style="display: flex;">
-                    <li class="brand-list">
-                        <a href="">品牌列表</a>
-                        <div class="brand-list-item">
-                            <ul class="sub-list">
-                                <?php
-                                while ($data = mysqli_fetch_assoc($query)) {
-                                    echo " 
-                                        <li><a href='categories.php?cat_id=" . h($data['id']) . "'>" . h($data['catname']) . "</a></li>
-                                    ";
-                                }
-                                ?>
-                            </ul>
 
-                            <ul class="sub-list2">
-                                <?php
-                                while ($data = mysqli_fetch_assoc($subquery)) {
-                                    echo " 
-                                        <li><a href='subcategories.php?subcat_id=" . h($data['id']) . "'>" . h($data['subname']) . "</a></li>
-                                    ";
-                                }
-                                ?>
-
-                            </ul>
-
-                        </div>
-                    </li>
-
-                    <li class="sport-list">
-                        <a href="">專業運動</a>
-                        <div class="sport-list-item">
-                            <ul>
-                                <h5><a href="">球類用品</a></h5>
-                                <li><a href="">籃球</a></li>
-                                <li><a href="">棒球</a></li>
-                                <li><a href="">排球</a></li>
-                                <li><a href="">羽毛球</a></li>
-                                <li><a href="">網球</a></li>
-                                <li><a href="">桌球</a></li>
-                                <li><a href="">足球</a></li>
-                            </ul>
-                            <ul>
-                                <h5><a href="">訓練器材</a></h5>
-                                <li><a href="">啞鈴</a></li>
-                                <li><a href="">彈力帶</a></li>
-                                <li><a href="">瑜珈墊</a></li>
-                                <li><a href="">滾筒</a></li>
-                            </ul>
-                            <ul>
-                                <h5><a href="">登山器具</a></h5>
-                                <li><a href="">登山服飾</a></li>
-                                <li><a href="">登山鞋</a></li>
-                                <li><a href="">登山杖</a></li>
-                                <li><a href="">背包</a></li>
-                                <li><a href="">睡袋</a></li>
-                            </ul>
-                            <ul>
-                                <h5><a href="">自行車</a></h5>
-                                <li><a href="">自行車衣</a></li>
-                                <li><a href="">自行車褲</a></li>
-                                <li><a href="">配件</a></li>
-                                <li><a href="">背包</a></li>
-                            </ul>
-                            <ul>
-                                <h5><a href="">游泳</a></h5>
-                                <li><a href="">泳衣</a></li>
-                                <li><a href="">泳褲</a></li>
-                                <li><a href="">配件</a></li>
-                            </ul>
-                            <ul>
-                                <h5><a href="">滑板</a></h5>
-                                <li><a href="">滑板</a></li>
-                                <li><a href="">蛇板</a></li>
-                                <li><a href="">雙龍板</a></li>
-                            </ul>
-                            <ul>
-                                <h5><a href="">直排輪</a></h5>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="service-list">
-                        <a href="">特色服務</a>
-                        <div class="service-list-item">
-                            <div class="badmin">
-                                <div class="service-img">
-                                    <a href="./badminton.php"><img src="./images/badmin-header.jpg" alt=""></a>
-                                </div>
-                                <h2>羽球專區</h2>
-                                <div class="service-title-underline"></div>
+            <nav class="header-nav">
+                <ul class="header-list">
+                    <li class="has-dropdown">
+                        <a href="./sitemap.php">品牌列表</a>
+                        <div class="dropdown-panel">
+                            <div class="dropdown-col">
+                                <h6>品牌</h6>
+                                <ul>
+                                    <?php
+                                    while ($data = mysqli_fetch_assoc($query)) {
+                                        echo "<li><a href='categories.php?cat_id=" . h($data['id']) . "'>" . h($data['catname']) . "</a></li>";
+                                    }
+                                    ?>
+                                </ul>
                             </div>
-                            <div class="baseball">
-                                <div class="service-img">
-                                    <img src="./images/baseball-header.jpg" alt="">
-                                </div>
-                                <h2>棒球專區</h2>
-                                <div class="service-title-underline"></div>
+                            <div class="dropdown-col">
+                                <h6>分類</h6>
+                                <ul>
+                                    <?php
+                                    while ($data = mysqli_fetch_assoc($subquery)) {
+                                        echo "<li><a href='subcategories.php?subcat_id=" . h($data['id']) . "'>" . h($data['subname']) . "</a></li>";
+                                    }
+                                    ?>
+                                </ul>
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <a href="./story.php">故事屋</a>
 
-                    </li>
-                    <li>
-                        <div class="right-items">
-                
-                            <a href="cart-page.php"><i class="fas fa-shopping-cart"></i><sup><?php echo $num ?></sup></a>
+                    <li class="has-dropdown">
+                        <a href="#">專業運動</a>
+                        <div class="dropdown-panel dropdown-panel--wide">
+                            <div class="dropdown-col">
+                                <h6>球類用品</h6>
+                                <ul>
+                                    <li><a href="#">籃球</a></li>
+                                    <li><a href="#">棒球</a></li>
+                                    <li><a href="#">排球</a></li>
+                                    <li><a href="#">羽毛球</a></li>
+                                    <li><a href="#">網球</a></li>
+                                    <li><a href="#">桌球</a></li>
+                                    <li><a href="#">足球</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>訓練器材</h6>
+                                <ul>
+                                    <li><a href="#">啞鈴</a></li>
+                                    <li><a href="#">彈力帶</a></li>
+                                    <li><a href="#">瑜珈墊</a></li>
+                                    <li><a href="#">滾筒</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>登山器具</h6>
+                                <ul>
+                                    <li><a href="#">登山服飾</a></li>
+                                    <li><a href="#">登山鞋</a></li>
+                                    <li><a href="#">登山杖</a></li>
+                                    <li><a href="#">背包</a></li>
+                                    <li><a href="#">睡袋</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>自行車</h6>
+                                <ul>
+                                    <li><a href="#">自行車衣</a></li>
+                                    <li><a href="#">自行車褲</a></li>
+                                    <li><a href="#">配件</a></li>
+                                    <li><a href="#">背包</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>游泳</h6>
+                                <ul>
+                                    <li><a href="#">泳衣</a></li>
+                                    <li><a href="#">泳褲</a></li>
+                                    <li><a href="#">配件</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-col">
+                                <h6>滑板・直排輪</h6>
+                                <ul>
+                                    <li><a href="#">滑板</a></li>
+                                    <li><a href="#">蛇板</a></li>
+                                    <li><a href="#">雙龍板</a></li>
+                                    <li><a href="#">直排輪</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </li>
+
+                    <li class="has-dropdown">
+                        <a href="#">特色服務</a>
+                        <div class="dropdown-panel">
+                            <div class="dropdown-col">
+                                <ul>
+                                    <li><a href="./badminton.php">羽球專區</a></li>
+                                    <li><a href="#">棒球專區</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="./story.php">故事屋</a></li>
                 </ul>
+            </nav>
 
+            <div class="header-right">
+                <form class="header-search" action="./search.php" method="get" role="search">
+                    <input type="search" name="q" placeholder="搜尋商品" aria-label="搜尋商品">
+                    <button type="submit" aria-label="搜尋">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </form>
+
+                <div class="header-icons">
+                    <?php if (isset($user_id)) { ?>
+                        <a href="./logout.php" class="icon-link" title="登出">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="icon-label">登出</span>
+                        </a>
+                    <?php } else { ?>
+                        <a href="./index.php" class="icon-link" title="登入 / 註冊">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="icon-label">登入</span>
+                        </a>
+                    <?php } ?>
+                    <a href="cart-page.php" class="icon-link" title="購物車">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span class="cart-count"><?php echo h($num) ?></span>
+                    </a>
+                </div>
+
+                <button class="header-button" type="button" aria-label="開啟選單" aria-expanded="false">
+                    <span class="list-line"></span>
+                </button>
             </div>
 
             <div class="header-phone-list-container" aria-hidden="true">
+                <form class="header-search header-search--mobile" action="./search.php" method="get" role="search">
+                    <input type="search" name="q" placeholder="搜尋商品" aria-label="搜尋商品">
+                    <button type="submit" aria-label="搜尋">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </form>
                 <ul class="header-phone-list">
                     <li>
                         <details>
                             <summary>品牌列表</summary>
-                            <div class="brand-list-phone">
+                            <div class="dropdown-col">
+                                <h6>品牌</h6>
                                 <ul>
                                     <?php
                                     mysqli_data_seek($query, 0);
                                     while ($data = mysqli_fetch_assoc($query)) {
                                         echo "<li><a href='categories.php?cat_id=" . h($data['id']) . "'>" . h($data['catname']) . "</a></li>";
                                     }
+                                    ?>
+                                </ul>
+                                <h6>分類</h6>
+                                <ul>
+                                    <?php
                                     mysqli_data_seek($subquery, 0);
                                     while ($data = mysqli_fetch_assoc($subquery)) {
                                         echo "<li><a href='subcategories.php?subcat_id=" . h($data['id']) . "'>" . h($data['subname']) . "</a></li>";
@@ -203,33 +237,34 @@ if(isset($user_id)) {
                     <li>
                         <details>
                             <summary>專業運動</summary>
-                            <div class="sports-list-phone">
+                            <div class="dropdown-col">
                                 <ul>
-                                    <li><a href="">籃球</a></li>
-                                    <li><a href="">棒球</a></li>
-                                    <li><a href="">排球</a></li>
-                                    <li><a href="">羽毛球</a></li>
-                                    <li><a href="">網球</a></li>
-                                    <li><a href="">桌球</a></li>
-                                    <li><a href="">足球</a></li>
-                                    <li><a href="">登山器具</a></li>
-                                    <li><a href="">游泳用品</a></li>
+                                    <li><a href="#">籃球</a></li>
+                                    <li><a href="#">棒球</a></li>
+                                    <li><a href="#">排球</a></li>
+                                    <li><a href="#">羽毛球</a></li>
+                                    <li><a href="#">網球</a></li>
+                                    <li><a href="#">桌球</a></li>
+                                    <li><a href="#">足球</a></li>
+                                    <li><a href="#">登山器具</a></li>
+                                    <li><a href="#">游泳用品</a></li>
                                 </ul>
                             </div>
                         </details>
                     </li>
                     <li><a href="./badminton.php">羽球專區</a></li>
                     <li><a href="./story.php">故事屋</a></li>
-                    <li><a href="cart-page.php">購物車（<?php echo $num ?>）</a></li>
+                    <li><a href="cart-page.php">購物車（<?php echo h($num) ?>）</a></li>
                     <?php
                     if (isset($user_id)) {
                         echo "<li><a href='logout.php'>登出</a></li>";
+                    } else {
+                        echo "<li><a href='./index.php'>登入 / 註冊</a></li>";
                     }
                     ?>
                 </ul>
             </div>
             <div class="header-phone-list-container-bg"></div>
-
 
         </div>
     </div>

@@ -1,0 +1,23 @@
+.search-heading{
+    max-width: 1360px;
+    margin: 40px auto 10px;
+    padding: 0 24px;
+}
+.search-heading h1{
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: #17150f;
+}
+.search-heading p{
+    margin: 0;
+    color: #5b5644;
+    font-size: 0.95rem;
+}
+.search-empty{
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px;
+    color: #5b5644;
+    font-size: 1rem;
+}
