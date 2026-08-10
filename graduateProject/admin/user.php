@@ -22,7 +22,6 @@ if(isset($_GET['id']) && $_GET['id']!='' && csrf_verify($_GET['csrf_token'] ?? '
                 <th>會員ID</th>
                 <th>會員Email</th>
                 <th>會員聯絡號碼</th>
-                <th>會員密碼</th>
 
             </tr>
             <?php
@@ -37,7 +36,6 @@ if(isset($_GET['id']) && $_GET['id']!='' && csrf_verify($_GET['csrf_token'] ?? '
                         <td>".h($data['user_id'])."</td>
                         <td>".h($data['email'])."</td>
                         <td>".h($data['mnumber'])."</td>
-                        <td>".h($data['password'])."</td>
                     </tr>
                     ";
                 }

@@ -17,11 +17,10 @@ if ($uname) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin-Dashboard manage products</title>
+    <title>後台管理 | 文宏運動用品店</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?
-    family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
