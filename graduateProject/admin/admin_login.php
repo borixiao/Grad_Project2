@@ -28,62 +28,80 @@ if(isset($_POST['submit'])){
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Admin Login Page</title>
+    <title>後台登入 | 文宏運動用品店</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style type="text/css">
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        :root{
+            --ink: #17150f;
+            --ink-soft: #5b5644;
+            --bg: #f7f4ee;
+            --accent: #1f3d2e;
+            --line: #ded8c7;
         }
         body{
             width: 100%;
             min-height: 100vh;
             display: flex;
-            background: #fff;
+            background: var(--bg);
             justify-content: center;
             align-items: center;
-            background-image: url("../images/hermes-rivera-OX_en7CXMj4-unsplash.jpg");
-            /* background-size: contain; */
         }
         .container{
-            width: 500px;
-            height: 360px;
-            border: 1px solid #f2f2f2;
-            background-color: #f2f2f2;
+            width: 420px;
+            border: 1px solid var(--line);
+            background-color: #fff;
+            box-shadow: 0 20px 50px rgba(23, 21, 15, 0.08);
+        }
+        .container .brand{
+            padding: 32px 40px 0;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            color: var(--ink-soft);
+            text-transform: uppercase;
         }
         .container h1{
-            padding-left: 120px;
-            padding-top: 20px;
+            padding: 6px 40px 24px;
+            font-size: 1.5rem;
+            color: var(--ink);
         }
         .container .loginForm{
             width: 100%;
             position: relative;
-            padding: 40px;
+            padding: 0 40px 40px;
         }
         .container .loginForm .data{
             width: 100%;
             padding: 15px 10px;
             outline: none;
-            border: 1px solid #111;
-            color: #111;
+            border: 1px solid var(--line);
+            color: var(--ink);
             margin: 8px 0;
+        }
+        .container .loginForm .data:focus{
+            border-color: var(--accent);
         }
         .btn{
             width: 100%;
             padding: 15px;
-            background: #1abc9c;
+            background: var(--accent);
             color: #fff;
             outline: none;
             cursor: pointer;
             border: 0;
             font-size: 1em;
+            margin-top: 8px;
         }
         .msg{
-            color: #e74c3c;
+            color: #b3261e;
             padding: 5px;
         }
     </style>
@@ -91,7 +109,8 @@ if(isset($_POST['submit'])){
 
 <body>
 <div class="container">
-    <h1>Commerce CMS</h1>
+    <div class="brand">WINHORN 文宏運動用品店</div>
+    <h1>後台管理登入</h1>
     <form action="" method="post" class="loginForm">
         <input type="text" name="uname" placeholder="使用者名稱" class="data" required>
         <input type="password" name="pswd" placeholder="密碼" class="data" required>
